@@ -63,6 +63,8 @@ public class AlligatorControl : MonoBehaviour
 
         if (!Physics2D.Raycast(checkPoint.position, transform.forward, 10, LayerMask.GetMask("Animal")))
         {
+            capsuleCollider.enabled = false;
+
             headAnim.AnimationName = "run5";
             headAnim.timeScale = 2;
             bodyRenderer.sprite = normalBody;
