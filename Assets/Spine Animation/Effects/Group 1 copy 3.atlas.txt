@@ -4,4 +4,4 @@ filter:Linear,Linear
 pma:true
 Ellipse 1
 bounds:2,2,167,167
-offsets:8,8,183,183
+offsets:7,7,181,181
