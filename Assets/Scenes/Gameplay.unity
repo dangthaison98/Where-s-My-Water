@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &106528152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,9 +200,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106528151}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 2.535755, y: 1, z: 1}
+  m_LocalScale: {x: 6.9278135, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1779471607}
@@ -511,8 +511,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373201327}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 2.0319533, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,7 +543,7 @@ Transform:
   m_GameObject: {fileID: 431809904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8659766, y: 0, z: 0}
+  m_LocalPosition: {x: 2.59793, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1874,7 +1874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213842481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 1779471607}
   - component: {fileID: 1779471609}
   - component: {fileID: 1779471611}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Alligator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1917,7 +1917,7 @@ Transform:
   - {fileID: 106528153}
   - {fileID: 1213842483}
   m_Father: {fileID: 452269740}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -256.94}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1779471609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,12 +1930,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca72125fbe41d4498ef6cfc52c0d6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalLength: 0
+  animalLength: 2
   checkPoint: {fileID: 431809905}
   capsuleCollider: {fileID: 1779471611}
   head: {fileID: 373201327}
   body: {fileID: 106528151}
+  tail: {fileID: 1213842481}
   rotate: 0
+  isFlip: 1
   tilemap: {fileID: 666347282}
 --- !u!70 &1779471611
 CapsuleCollider2D:
@@ -1969,8 +1971,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4329883, y: 0}
-  m_Size: {x: 1.3659766, y: 0.5}
+  m_Offset: {x: 1.2989649, y: 0}
+  m_Size: {x: 3.0979297, y: 0.5}
   m_Direction: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

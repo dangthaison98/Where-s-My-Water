@@ -35,7 +35,21 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+    }
+    private void OnMouseUp()
+    {
+        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)));
+
+        if (Physics2D.Raycast(checkPoint.position, transform.forward))
+        {
+            //Run
+        }
+    }
+
+    private void CaculatePosition(Vector3 pos)
+    {
+        Vector2 difference = pos - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
@@ -79,21 +93,32 @@ public class AlligatorControl : MonoBehaviour
         capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
         capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
     }
-    private void OnMouseUp()
-    {
-        
-    }
 
 
 #if UNITY_EDITOR
     [Title("Editor"), Space(100)]
     [Min(0)]
+    public GameObject tail;
     public int rotate;
+    public bool isFlip;
     public Tilemap tilemap;
 
     [Button(ButtonHeight = 100)]
     private void BakeAnimal()
     {
+        if(isFlip)
+        {
+            head.transform.localRotation = Quaternion.Euler(180, 0f, 0f);
+            body.transform.localRotation = Quaternion.Euler(180, 0f, 0f);
+            tail.transform.localRotation = Quaternion.Euler(180, 0f, 0f);
+        }
+        else
+        {
+            head.transform.localRotation = Quaternion.identity;
+            body.transform.localRotation = Quaternion.identity;
+            tail.transform.localRotation = Quaternion.identity;
+        }
+
         transform.position = tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
 
         if (animalLength != 0)
@@ -138,7 +163,7 @@ public class AlligatorControl : MonoBehaviour
                     mainPos[5], mainPos[0]);
             }
 
-            Vector3 difference = tilemap.CellToWorld(tilemap.WorldToCell(checkPoint.position))- tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
+            Vector2 difference = tilemap.CellToWorld(tilemap.WorldToCell(checkPoint.position))- tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
