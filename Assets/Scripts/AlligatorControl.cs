@@ -143,15 +143,8 @@ public class AlligatorControl : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
             head.transform.localPosition = checkPoint.localPosition + headPos;
-            if (animalLength == 0)
-            {
-                body.SetActive(false);
-            }
-            else
-            {
-                body.SetActive(true);
-                body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
-            }
+            body.SetActive(true);
+            body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
             capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
             capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
@@ -160,15 +153,7 @@ public class AlligatorControl : MonoBehaviour
         {
             head.transform.localPosition = new Vector3(0.3f + 0.8659766f * animalLength, 0);
             checkPoint.transform.localPosition = new Vector3(0.8659766f * (animalLength + 1), 0);
-            if (animalLength == 0)
-            {
-                body.SetActive(false);
-            }
-            else
-            {
-                body.SetActive(true);
-                body.transform.localScale = new Vector3(0.8659766f * 4 * animalLength, 1, 1);
-            }
+            body.SetActive(false);
 
             capsuleCollider.offset = new Vector2(0.8659766f * (animalLength + 1) / 2, 0);
             capsuleCollider.size = new Vector2(0.8659766f * (animalLength + 1) + 0.5f, 0.5f);
