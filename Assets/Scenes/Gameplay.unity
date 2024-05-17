@@ -1690,7 +1690,7 @@ Transform:
   - {fileID: 106528153}
   - {fileID: 1213842483}
   m_Father: {fileID: 452269740}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -210.54}
 --- !u!114 &1779471609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,8 +1703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca72125fbe41d4498ef6cfc52c0d6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoint: {fileID: 431809905}
   animalLength: 3
+  checkPoint: {fileID: 431809905}
   rotate: 0
   capsuleCollider: {fileID: 1779471611}
   head: {fileID: 373201327}

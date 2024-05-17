@@ -10,6 +10,18 @@ public class AnimalRotate : MonoBehaviour
 
     public Transform checkPoint;
 
+    private Vector2[] mainPos = new Vector2[6];
+
+    private void Awake()
+    {
+        mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), -30);
+        mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30);
+        mainPos[2] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90);
+        mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150);
+        mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210);
+        mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270);
+    }
+
     private void OnMouseDown()
     {
         
@@ -20,35 +32,35 @@ public class AnimalRotate : MonoBehaviour
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-        if(rotZ >= -30 && rotZ < 30)
+        if (rotZ >= -30 && rotZ < 30)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), -30));
+                mainPos[0], mainPos[1]);
         }
-        else if(rotZ >= 30 && rotZ < 90)
+        else if (rotZ >= 30 && rotZ < 90)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90));
+                mainPos[1], mainPos[2]);
         }
         else if (rotZ >= 90 && rotZ < 150)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150));
+                mainPos[2], mainPos[3]);
         }
         else if ((rotZ >= 150 && rotZ < 180) || (rotZ >= -180 && rotZ < -150))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210));
+                mainPos[3], mainPos[4]);
         }
         else if (rotZ >= -150 && rotZ < -90)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270));
+                mainPos[4], mainPos[5]);
         }
         else
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 330));
+                mainPos[5], mainPos[0]);
         }
     }
     private void OnMouseUp()
