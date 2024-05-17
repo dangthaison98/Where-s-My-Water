@@ -1,0 +1,18 @@
+ca sau xanh_bo khoang giua than.png
+size:340,116
+filter:Linear,Linear
+pma:true
+dau
+bounds:2,2,138,112
+offsets:11,0,149,112
+tay p
+bounds:287,6,54,46
+offsets:2,1,58,48
+rotate:90
+tay p copy
+bounds:287,62,52,51
+offsets:1,1,54,54
+rotate:90
+than p
+bounds:142,7,143,107
+offsets:1,1,145,109
