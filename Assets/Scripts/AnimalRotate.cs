@@ -22,7 +22,7 @@ public class AnimalRotate : MonoBehaviour
     }
 
 
-
+#if UNITY_EDITOR
     [Range(0, 10)]
     public int animalLength;
     public CapsuleCollider2D capsuleCollider;
@@ -46,4 +46,5 @@ public class AnimalRotate : MonoBehaviour
         capsuleCollider.offset = new Vector2 (0, 0.8659766f * (animalLength + 1)/2);
         capsuleCollider.size = new Vector2 (0.5f, 0.8659766f * (animalLength + 1) + 0.5f);
     }
+#endif
 }
