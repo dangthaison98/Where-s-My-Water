@@ -104,61 +104,78 @@ public class AnimalRotate : MonoBehaviour
             mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150);
             mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210);
             mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270);
-        }
+            float rotZ1 = 90f + Mathf.Clamp(rotate, 0, (animalLength * 6f + 6f) - 1) * 360f / (animalLength * 6f + 6f);
+            transform.rotation = Quaternion.Euler(0, 0, rotZ1);
 
-        
+            if (rotZ1 >= 330 && rotZ1 < 390)
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[0], mainPos[1]);
+            }
+            else if (rotZ1 >= 390 && rotZ1 < 450)
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[1], mainPos[2]);
+            }
+            else if (rotZ1 >= 90 && rotZ1 < 150)
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[2], mainPos[3]);
+            }
+            else if ((rotZ1 >= 150 && rotZ1 < 210))
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[3], mainPos[4]);
+            }
+            else if (rotZ1 >= 210 && rotZ1 < 270)
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[4], mainPos[5]);
+            }
+            else
+            {
+                checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                    mainPos[5], mainPos[0]);
+            }
 
-        float rotZ1 = 90f + Mathf.Clamp(rotate, 0, (animalLength * 6f + 6f) - 1) * 360f / (animalLength * 6f + 6f);
-        transform.rotation = Quaternion.Euler(0, 0, rotZ1);
+            Vector3 difference = tilemap.CellToWorld(tilemap.WorldToCell(checkPoint.position))- tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-        if (rotZ1 >= 330 && rotZ1 < 390)
-        {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[0], mainPos[1]);
-        }
-        else if (rotZ1 >= 390 && rotZ1 < 450)
-        {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[1], mainPos[2]);
-        }
-        else if (rotZ1 >= 90 && rotZ1 < 150)
-        {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[2], mainPos[3]);
-        }
-        else if ((rotZ1 >= 150 && rotZ1 < 210))
-        {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[3], mainPos[4]);
-        }
-        else if (rotZ1 >= 210 && rotZ1 < 270)
-        {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[4], mainPos[5]);
+            head.transform.localPosition = checkPoint.localPosition + headPos;
+            if (animalLength == 0)
+            {
+                body.SetActive(false);
+            }
+            else
+            {
+                body.SetActive(true);
+                body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
+            }
+
+            capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
+            capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
         }
         else
         {
-            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
-                mainPos[5], mainPos[0]);
-        }
+            head.transform.localPosition = new Vector3(0.3f + 0.8659766f * animalLength, 0);
+            checkPoint.transform.localPosition = new Vector3(0.8659766f * (animalLength + 1), 0);
+            if (animalLength == 0)
+            {
+                body.SetActive(false);
+            }
+            else
+            {
+                body.SetActive(true);
+                body.transform.localScale = new Vector3(0.8659766f * 4 * animalLength, 1, 1);
+            }
 
-        Vector3 difference = tilemap.CellToWorld(tilemap.WorldToCell(checkPoint.position))- tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+            capsuleCollider.offset = new Vector2(0.8659766f * (animalLength + 1) / 2, 0);
+            capsuleCollider.size = new Vector2(0.8659766f * (animalLength + 1) + 0.5f, 0.5f);
 
-        head.transform.localPosition = checkPoint.localPosition + headPos;
-        if (animalLength == 0)
-        {
-            body.SetActive(false);
-        }
-        else
-        {
-            body.SetActive(true);
-            body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
-        }
 
-        capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
-        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
+            transform.rotation = Quaternion.Euler(0, 0, 90f + rotate * 360f / (animalLength * 6f + 6f));
+        }
     }
 #endif
 }
