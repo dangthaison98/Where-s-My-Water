@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -7,6 +8,7 @@ using UnityEngine.Tilemaps;
 
 public class AlligatorControl : MonoBehaviour
 {
+    [Title("Data")]
     [Range(0, 9)]
     public int animalLength;
 
@@ -14,6 +16,10 @@ public class AlligatorControl : MonoBehaviour
     public CapsuleCollider2D capsuleCollider;
     public GameObject head;
     public GameObject body;
+
+    [Title("Spine Animation")]
+    public SkeletonAnimation headAnim;
+    public SkeletonAnimation tailAnim;
 
     private Vector2[] mainPos = new Vector2[6];
     private Vector3 headPos = new Vector2(-0.5659766f, 0);
@@ -43,7 +49,7 @@ public class AlligatorControl : MonoBehaviour
 
         if (!Physics2D.Raycast(checkPoint.position, transform.forward, 10, LayerMask.GetMask("Animal")))
         {
-            //Run
+            Debug.Log("Ok");
         }
         gameObject.layer = LayerMask.GetMask("Animal");
     }
