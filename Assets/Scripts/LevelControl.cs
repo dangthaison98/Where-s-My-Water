@@ -15,7 +15,8 @@ public class LevelControl : MonoBehaviour
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var noZ = new Vector3(pos.x, pos.y);
             Vector3Int mouseCell = mapGrid.WorldToCell(noZ);
-            Debug.LogError(mouseCell);
+            Vector3 worldPos = mapGrid.CellToWorld(mouseCell);
+            Debug.LogError(Vector3.Distance(Vector3.zero, worldPos));
         }
     }
 }
