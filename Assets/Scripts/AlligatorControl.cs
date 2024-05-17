@@ -41,7 +41,7 @@ public class AlligatorControl : MonoBehaviour
     {
         CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)));
 
-        if (Physics2D.Raycast(checkPoint.position, transform.forward))
+        if (!Physics2D.Raycast(checkPoint.position, transform.forward, 10, LayerMask.GetMask("Animal")))
         {
             //Run
         }
