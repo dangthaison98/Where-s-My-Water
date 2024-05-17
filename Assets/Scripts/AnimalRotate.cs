@@ -39,7 +39,7 @@ public class AnimalRotate : MonoBehaviour
         else
         {
             body.SetActive(true);
-            body.transform.position = new Vector3(0, (0.8659766f * animalLength)/2 + 0.3f, 0);
+            body.transform.localPosition = new Vector3(0, (0.8659766f * animalLength)/2 + 0.3f, 0);
             body.transform.localScale = new Vector3(0.8659766f * 4 * animalLength, 1, 1);
         }
 
