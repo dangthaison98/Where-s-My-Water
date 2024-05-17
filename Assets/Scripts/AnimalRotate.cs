@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimalRotate : MonoBehaviour
 {
+    public int animalLength;
+
     private void OnMouseDown()
     {
         Debug.Log("Down");
