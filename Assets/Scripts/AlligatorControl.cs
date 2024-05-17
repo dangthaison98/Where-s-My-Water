@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AnimalRotate : MonoBehaviour
+public class AlligatorControl : MonoBehaviour
 {
     [Range(0, 9)]
     public int animalLength;
