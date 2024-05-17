@@ -6,7 +6,14 @@ using UnityEngine.Tilemaps;
 
 public class LevelControl : MonoBehaviour
 {
+    public static LevelControl Instance;
+
     public Tilemap mapGrid;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -16,7 +23,7 @@ public class LevelControl : MonoBehaviour
             var noZ = new Vector3(pos.x, pos.y);
             Vector3Int mouseCell = mapGrid.WorldToCell(noZ);
             Vector3 worldPos = mapGrid.CellToWorld(mouseCell);
-            Debug.LogError(Vector3.Distance(Vector3.zero, worldPos));
+            Debug.LogError(mouseCell);
         }
     }
 }
