@@ -14,19 +14,4 @@ public class LevelControl : MonoBehaviour
     {
         Instance = this;
     }
-
-    public float radius;
-    public float angle;
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //var noZ = new Vector3(pos.x, pos.y);
-            //Vector3Int mouseCell = mapGrid.WorldToCell(noZ);
-            //Vector3 worldPos = mapGrid.CellToWorld(mouseCell);
-            //Debug.LogError(mouseCell);
-            //Debug.LogError(Caculate.FindPointInCircle(Vector2.zero, radius, angle));
-        }
-    }
 }
