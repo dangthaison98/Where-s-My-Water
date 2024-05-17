@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 106528151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.734, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7329883, z: 0}
   m_LocalScale: {x: 3.4639063, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1656,6 +1656,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalLength: 0
+  capsuleCollider: {fileID: 1779471611}
+  head: {fileID: 373201327}
+  body: {fileID: 106528151}
 --- !u!70 &1779471611
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1689,7 +1692,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4329883}
-  m_Size: {x: 0.5, y: 1.365977}
+  m_Size: {x: 0.5, y: 1.3659766}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
