@@ -134,12 +134,12 @@ GameObject:
   - component: {fileID: 106528153}
   - component: {fileID: 106528152}
   m_Layer: 0
-  m_Name: Alligator Body
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &106528152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 373201329}
   - component: {fileID: 373201328}
   m_Layer: 0
-  m_Name: Alligator Head
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 373201327}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1659765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1548,7 +1548,7 @@ GameObject:
   - component: {fileID: 1213842483}
   - component: {fileID: 1213842482}
   m_Layer: 0
-  m_Name: Alligator Tail
+  m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1647,7 +1647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779471606}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.50000006, w: -0.8660254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -1669,8 +1669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca72125fbe41d4498ef6cfc52c0d6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalLength: 0
-  rotate: 5
+  animalLength: 1
+  rotate: 0
   capsuleCollider: {fileID: 1779471611}
   head: {fileID: 373201327}
   body: {fileID: 106528151}
@@ -1706,8 +1706,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4329883}
-  m_Size: {x: 0.5, y: 1.3659766}
+  m_Offset: {x: 0, y: 0.8659766}
+  m_Size: {x: 0.5, y: 2.2319531}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
