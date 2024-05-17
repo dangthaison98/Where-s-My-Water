@@ -1,0 +1,7 @@
+Group 1 copy 3.png
+size:171,171
+filter:Linear,Linear
+pma:true
+Ellipse 1
+bounds:2,2,167,167
+offsets:8,8,183,183

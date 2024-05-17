@@ -28,6 +28,9 @@ public class AlligatorControl : MonoBehaviour
     public Sprite yellowBody;
     public Sprite redBody;
 
+    [Title("Effect")]
+    public GameObject smokeEffect;
+
     private Vector2[] mainPos = new Vector2[6];
     private Vector3 headPos = new Vector2(-0.5659766f, 0);
 
@@ -65,6 +68,7 @@ public class AlligatorControl : MonoBehaviour
             bodyRenderer.sprite = normalBody;
             tailAnim.AnimationName = "run5";
             tailAnim.timeScale = 2;
+            smokeEffect.SetActive(true);
             return;
         }
         ////////////////////////////////////////////////
