@@ -202,7 +202,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 10.391719, y: 1, z: 1}
+  m_LocalScale: {x: 10.391726, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1779471607}
@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 373201327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8979297, y: 0, z: 0}
+  m_LocalPosition: {x: 2.8979313, y: -0.0000026226044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -316,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 431809904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4639063, y: 0, z: 0}
+  m_LocalPosition: {x: 3.463908, y: -0.0000026226044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1690,7 +1690,7 @@ Transform:
   - {fileID: 106528153}
   - {fileID: 1213842483}
   m_Father: {fileID: 452269740}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -210.54}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -256.94}
 --- !u!114 &1779471609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1709,7 @@ MonoBehaviour:
   head: {fileID: 373201327}
   body: {fileID: 106528151}
   rotate: 0
+  tilemap: {fileID: 666347282}
 --- !u!70 &1779471611
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1741,8 +1742,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.7319531, y: 0}
-  m_Size: {x: 3.9639063, y: 0.5}
+  m_Offset: {x: 1.731954, y: 0}
+  m_Size: {x: 3.963908, y: 0.5}
   m_Direction: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

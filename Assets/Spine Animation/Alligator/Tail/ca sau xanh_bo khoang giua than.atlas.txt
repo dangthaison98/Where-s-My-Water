@@ -1,23 +1,48 @@
 ca sau xanh_bo khoang giua than.png
-size:161,125
+size:616,114
 filter:Linear,Linear
 pma:true
 chan sau t copy
-bounds:111,69,54,48
+bounds:506,58,54,48
 offsets:1,1,56,50
 rotate:90
 chan truoci t
-bounds:111,69,54,48
+bounds:506,58,54,48
 offsets:1,1,56,50
 rotate:90
+chan truoci t do
+bounds:556,58,54,48
+rotate:90
+chan truoci t vang
+bounds:566,2,54,48
+rotate:90
 than t
-bounds:2,2,107,121
+bounds:248,5,107,121
 offsets:1,1,109,123
+rotate:90
+than t do
+bounds:125,5,107,121
+rotate:90
+than t do vang
+bounds:2,5,107,121
+rotate:90
+tran sau d  vang
+bounds:371,49,63,43
+rotate:90
 tran sau d copy
-bounds:111,4,63,43
+bounds:416,49,63,43
 offsets:1,1,65,45
 rotate:90
 tran truoc d
-bounds:111,4,63,43
+bounds:416,49,63,43
 offsets:1,1,65,45
+rotate:90
+tran sau d copy 2 do
+bounds:371,4,63,43
+tran truoc d 2
+bounds:501,4,63,43
+tran truoc d 2 do
+bounds:436,4,63,43
+tran truoc d 2 vang
+bounds:461,49,63,43
 rotate:90
