@@ -1705,10 +1705,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalLength: 3
   checkPoint: {fileID: 431809905}
-  rotate: 0
   capsuleCollider: {fileID: 1779471611}
   head: {fileID: 373201327}
   body: {fileID: 106528151}
+  rotate: 0
 --- !u!70 &1779471611
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

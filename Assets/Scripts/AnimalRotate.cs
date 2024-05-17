@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class AnimalRotate : MonoBehaviour
 {
-    [Range(0, 10)]
+    [Range(0, 9)]
     public int animalLength;
 
     public Transform checkPoint;
+    public CapsuleCollider2D capsuleCollider;
+    public GameObject head;
+    public GameObject body;
 
     private Vector2[] mainPos = new Vector2[6];
+    private Vector3 headPos = new Vector2(-0.5659766f, 0);
 
     private void Awake()
     {
@@ -62,6 +66,12 @@ public class AnimalRotate : MonoBehaviour
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[5], mainPos[0]);
         }
+
+        head.transform.localPosition = checkPoint.localPosition + headPos;
+        body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
+
+        capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
+        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
     }
     private void OnMouseUp()
     {
@@ -72,9 +82,6 @@ public class AnimalRotate : MonoBehaviour
 #if UNITY_EDITOR
     [Min(0)]
     public int rotate;
-    public CapsuleCollider2D capsuleCollider;
-    public GameObject head;
-    public GameObject body;
 
     private void OnValidate()
     {
