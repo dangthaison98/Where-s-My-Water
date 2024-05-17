@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -17,8 +18,9 @@ public class AlligatorControl : MonoBehaviour
     public GameObject head;
     public GameObject body;
 
-    [Title("Spine Animation")]
+    [Title("Animation")]
     public SkeletonAnimation headAnim;
+    public SpriteRenderer bodyRenderer;
     public SkeletonAnimation tailAnim;
 
     private Vector2[] mainPos = new Vector2[6];
@@ -38,6 +40,9 @@ public class AlligatorControl : MonoBehaviour
     private void OnMouseDown()
     {
         gameObject.layer = LayerMask.GetMask("Default");
+
+        headAnim.AnimationName = "run3";
+        tailAnim.AnimationName = "run3";
     }
     private void OnMouseDrag()
     {
@@ -49,8 +54,25 @@ public class AlligatorControl : MonoBehaviour
 
         if (!Physics2D.Raycast(checkPoint.position, transform.forward, 10, LayerMask.GetMask("Animal")))
         {
-            Debug.Log("Ok");
+            headAnim.AnimationName = "run5";
+            headAnim.timeScale = 2;
+            tailAnim.AnimationName = "run5";
+            tailAnim.timeScale = 2;
+            return;
         }
+        ////////////////////////////////////////////////
+        int randomNum = UnityEngine.Random.Range(0, 2);
+        if (randomNum == 0)
+        {
+            headAnim.AnimationName = "run1";
+            tailAnim.AnimationName = "run1";
+        }
+        else
+        {
+            headAnim.AnimationName = "run2";
+            tailAnim.AnimationName = "run2";
+        }
+
         gameObject.layer = LayerMask.GetMask("Animal");
     }
 

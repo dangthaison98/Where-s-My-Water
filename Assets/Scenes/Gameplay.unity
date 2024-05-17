@@ -2084,6 +2084,7 @@ MonoBehaviour:
   head: {fileID: 373201327}
   body: {fileID: 106528151}
   headAnim: {fileID: 204808328}
+  bodyRenderer: {fileID: 106528152}
   tailAnim: {fileID: 392233356}
   tail: {fileID: 1213842481}
   rotate: 0
