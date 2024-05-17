@@ -26,7 +26,7 @@ public class LevelControl : MonoBehaviour
             //Vector3Int mouseCell = mapGrid.WorldToCell(noZ);
             //Vector3 worldPos = mapGrid.CellToWorld(mouseCell);
             //Debug.LogError(mouseCell);
-            Debug.LogError(Caculate.FindPointInCircle(Vector2.zero, radius, angle));
+            //Debug.LogError(Caculate.FindPointInCircle(Vector2.zero, radius, angle));
         }
     }
 }

@@ -5,28 +5,54 @@ using UnityEngine;
 
 public class AnimalRotate : MonoBehaviour
 {
+    [Range(0, 10)]
+    public int animalLength;
 
     public Transform checkPoint;
 
     private void OnMouseDown()
     {
-        Debug.Log("Down");
+        
     }
     private void OnMouseDrag()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+
+        if(rotZ >= -30 && rotZ < 30)
+        {
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), -30));
+        }
+        else if(rotZ >= 30 && rotZ < 90)
+        {
+            Debug.Log("2");
+        }
+        else if (rotZ >= 90 && rotZ < 150)
+        {
+            Debug.Log("3");
+        }
+        else if ((rotZ >= 150 && rotZ < 180) || (rotZ >= -180 && rotZ < -150))
+        {
+            Debug.Log("4");
+        }
+        else if (rotZ >= -150 && rotZ < -90)
+        {
+            Debug.Log("5");
+        }
+        else
+        {
+            Debug.Log("6");
+        }
     }
     private void OnMouseUp()
     {
-        Debug.Log("Up");
+        
     }
 
 
 #if UNITY_EDITOR
-    [Range(0, 10)]
-    public int animalLength;
     [Min(0)]
     public int rotate;
     public CapsuleCollider2D capsuleCollider;
