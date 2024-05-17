@@ -202,7 +202,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 3.4639075, y: 1, z: 1}
+  m_LocalScale: {x: 3.4639065, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1779471607}
@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 204808326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0325, z: 0}
+  m_LocalPosition: {x: -0.0025, y: -0.0325, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 373201327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1659769, y: -0.00000011920929, z: 0}
+  m_LocalPosition: {x: 1.1659766, y: -0.00000011920929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 392233354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0325, z: 0}
+  m_LocalPosition: {x: 0.0025, y: -0.0325, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -745,7 +745,7 @@ Transform:
   m_GameObject: {fileID: 431809904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7319535, y: -0.00000011920929, z: 0}
+  m_LocalPosition: {x: 1.7319533, y: -0.00000011920929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2056,7 +2056,7 @@ Transform:
   m_GameObject: {fileID: 1779471606}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0.4329883, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2086,6 +2086,9 @@ MonoBehaviour:
   headAnim: {fileID: 204808328}
   bodyRenderer: {fileID: 106528152}
   tailAnim: {fileID: 392233356}
+  normalBody: {fileID: 21300000, guid: cdd2e8aec626e2b42b71ffc980428c14, type: 3}
+  yellowBody: {fileID: 21300000, guid: 0acc345df29767341aee5105d0890690, type: 3}
+  redBody: {fileID: 21300000, guid: f82a74f9293dd084b8e047c8d9744f9e, type: 3}
   tail: {fileID: 1213842481}
   rotate: 0
   isFlip: 0
@@ -2122,8 +2125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.8659767, y: 0}
-  m_Size: {x: 2.2319534, y: 0.5}
+  m_Offset: {x: 0.86597663, y: 0}
+  m_Size: {x: 2.2319531, y: 0.5}
   m_Direction: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -23,6 +23,11 @@ public class AlligatorControl : MonoBehaviour
     public SpriteRenderer bodyRenderer;
     public SkeletonAnimation tailAnim;
 
+    [Title("Sprite")]
+    public Sprite normalBody;
+    public Sprite yellowBody;
+    public Sprite redBody;
+
     private Vector2[] mainPos = new Vector2[6];
     private Vector3 headPos = new Vector2(-0.5659766f, 0);
 
@@ -42,6 +47,7 @@ public class AlligatorControl : MonoBehaviour
         gameObject.layer = LayerMask.GetMask("Default");
 
         headAnim.AnimationName = "run3";
+        bodyRenderer.sprite = yellowBody;
         tailAnim.AnimationName = "run3";
     }
     private void OnMouseDrag()
@@ -56,6 +62,7 @@ public class AlligatorControl : MonoBehaviour
         {
             headAnim.AnimationName = "run5";
             headAnim.timeScale = 2;
+            bodyRenderer.sprite = normalBody;
             tailAnim.AnimationName = "run5";
             tailAnim.timeScale = 2;
             return;
@@ -72,6 +79,7 @@ public class AlligatorControl : MonoBehaviour
             headAnim.AnimationName = "run2";
             tailAnim.AnimationName = "run2";
         }
+        bodyRenderer.sprite = normalBody;
 
         gameObject.layer = LayerMask.GetMask("Animal");
     }
@@ -80,6 +88,7 @@ public class AlligatorControl : MonoBehaviour
     {
         Vector2 difference = pos - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        Debug.Log(rotZ);
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
         if (animalLength == 0) return;
@@ -100,7 +109,7 @@ public class AlligatorControl : MonoBehaviour
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[2], mainPos[3]);
         }
-        else if ((rotZ >= 150 && rotZ < 180) || (rotZ >= -180 && rotZ < -150))
+        else if ((rotZ >= 150 && rotZ <= 180) || (rotZ >= -180 && rotZ < -150))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[3], mainPos[4]);
