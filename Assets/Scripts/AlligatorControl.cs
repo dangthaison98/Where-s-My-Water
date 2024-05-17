@@ -31,7 +31,7 @@ public class AlligatorControl : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+        gameObject.layer = LayerMask.GetMask("Default");
     }
     private void OnMouseDrag()
     {
@@ -45,6 +45,7 @@ public class AlligatorControl : MonoBehaviour
         {
             //Run
         }
+        gameObject.layer = LayerMask.GetMask("Animal");
     }
 
     private void CaculatePosition(Vector3 pos)
