@@ -27,23 +27,28 @@ public class AnimalRotate : MonoBehaviour
         }
         else if(rotZ >= 30 && rotZ < 90)
         {
-            Debug.Log("2");
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90));
         }
         else if (rotZ >= 90 && rotZ < 150)
         {
-            Debug.Log("3");
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150));
         }
         else if ((rotZ >= 150 && rotZ < 180) || (rotZ >= -180 && rotZ < -150))
         {
-            Debug.Log("4");
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210));
         }
         else if (rotZ >= -150 && rotZ < -90)
         {
-            Debug.Log("5");
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270));
         }
         else
         {
-            Debug.Log("6");
+            checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
+                Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270), Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 330));
         }
     }
     private void OnMouseUp()
