@@ -1,0 +1,18 @@
+so ani.png
+size:301,138
+filter:Linear,Linear
+pma:true
+Bong bong copy
+bounds:244,13,52,52
+offsets:1,1,54,54
+nap duoi copy
+bounds:2,2,134,119
+rotate:90
+nap tren copy
+bounds:123,2,134,119
+offsets:1,1,136,121
+rotate:90
+sau copy
+bounds:244,67,69,55
+offsets:1,1,71,57
+rotate:90
