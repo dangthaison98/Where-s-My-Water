@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca72125fbe41d4498ef6cfc52c0d6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alligatorLength: 0
+  alligatorLength: 1
   checkPoint: {fileID: 6705891199796433468}
   capsuleCollider: {fileID: 8880655605489451544}
   head: {fileID: 5604664491008023444}
