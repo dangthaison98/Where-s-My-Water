@@ -71,6 +71,8 @@ public class AlligatorControl : MonoBehaviour
             tailAnim.AnimationName = "run5";
             tailAnim.timeScale = 2;
             smokeEffect.SetActive(true);
+
+            StartCoroutine(RunOut());
             return;
         }
         ////////////////////////////////////////////////
@@ -90,11 +92,20 @@ public class AlligatorControl : MonoBehaviour
         gameObject.layer = LayerMask.GetMask("Animal");
     }
 
+    IEnumerator RunOut()
+    {
+        while (Vector2.Distance(transform.position, Vector2.zero) < 20)
+        {
+            transform.position += transform.right * 10 * Time.deltaTime;
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
     private void CaculatePosition(Vector3 pos)
     {
         Vector2 difference = pos - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        Debug.Log(rotZ);
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
         if (animalLength == 0) return;
