@@ -156,11 +156,12 @@ public class AlligatorControl : MonoBehaviour
     public GameObject tail;
     public int rotate;
     public bool isFlip;
-    public Tilemap tilemap;
+    private Tilemap tilemap;
 
     [Button(ButtonHeight = 100)]
     private void BakeAnimal()
     {
+        if(tilemap == null) { tilemap = FindObjectOfType<Tilemap>(); }
         if(isFlip)
         {
             head.transform.localRotation = Quaternion.Euler(180, 0f, 0f);
