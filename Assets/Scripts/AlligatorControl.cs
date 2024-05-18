@@ -31,11 +31,15 @@ public class AlligatorControl : MonoBehaviour
     [Title("Effect")]
     public GameObject smokeEffect;
 
+    private Rigidbody2D rb;
     private Vector2[] mainPos = new Vector2[6];
     private Vector3 headPos = new Vector2(-0.5659766f, 0);
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rb.centerOfMass = Vector2.zero;
+
         if (alligatorLength == 0) return;
         mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), -30);
         mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 30);
