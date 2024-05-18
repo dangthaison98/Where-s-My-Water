@@ -47,7 +47,7 @@ public class AlligatorControl : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameObject.layer = LayerMask.GetMask("Default");
+        gameObject.layer = 0;
 
         headAnim.AnimationName = "run3";
         bodyRenderer.sprite = yellowBody;
