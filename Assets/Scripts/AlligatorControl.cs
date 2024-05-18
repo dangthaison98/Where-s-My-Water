@@ -11,7 +11,7 @@ public class AlligatorControl : MonoBehaviour
 {
     [Title("Data")]
     [Range(0, 9)]
-    public int animalLength;
+    public int alligatorLength;
 
     public Transform checkPoint;
     public CapsuleCollider2D capsuleCollider;
@@ -36,13 +36,13 @@ public class AlligatorControl : MonoBehaviour
 
     private void Start()
     {
-        if (animalLength == 0) return;
-        mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), -30);
-        mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30);
-        mainPos[2] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90);
-        mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150);
-        mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210);
-        mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270);
+        if (alligatorLength == 0) return;
+        mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), -30);
+        mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 30);
+        mainPos[2] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 90);
+        mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 150);
+        mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 210);
+        mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 270);
     }
 
     private void OnMouseDown()
@@ -108,7 +108,7 @@ public class AlligatorControl : MonoBehaviour
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-        if (animalLength == 0) return;
+        if (alligatorLength == 0) return;
 
         //Resize Animal
         if (rotZ >= -30 && rotZ < 30)
@@ -177,15 +177,15 @@ public class AlligatorControl : MonoBehaviour
 
         transform.position = tilemap.CellToWorld(tilemap.WorldToCell(transform.position));
 
-        if (animalLength != 0)
+        if (alligatorLength != 0)
         {
-            mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), -30);
-            mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 30);
-            mainPos[2] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 90);
-            mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 150);
-            mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 210);
-            mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (animalLength + 1), 270);
-            float rotZ1 = 90f + Mathf.Clamp(rotate, 0, (animalLength * 6f + 6f) - 1) * 360f / (animalLength * 6f + 6f);
+            mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), -30);
+            mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 30);
+            mainPos[2] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 90);
+            mainPos[3] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 150);
+            mainPos[4] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 210);
+            mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 270);
+            float rotZ1 = 90f + Mathf.Clamp(rotate, 0, (alligatorLength * 6f + 6f) - 1) * 360f / (alligatorLength * 6f + 6f);
             transform.rotation = Quaternion.Euler(0, 0, rotZ1);
 
             if (rotZ1 >= 330 && rotZ1 < 390)
@@ -232,15 +232,15 @@ public class AlligatorControl : MonoBehaviour
         }
         else
         {
-            head.transform.localPosition = new Vector3(0.3f + 0.8659766f * animalLength, 0);
-            checkPoint.transform.localPosition = new Vector3(0.8659766f * (animalLength + 1), 0);
+            head.transform.localPosition = new Vector3(0.3f + 0.8659766f * alligatorLength, 0);
+            checkPoint.transform.localPosition = new Vector3(0.8659766f * (alligatorLength + 1), 0);
             body.SetActive(false);
 
-            capsuleCollider.offset = new Vector2(0.8659766f * (animalLength + 1) / 2, 0);
-            capsuleCollider.size = new Vector2(0.8659766f * (animalLength + 1) + 0.5f, 0.5f);
+            capsuleCollider.offset = new Vector2(0.8659766f * (alligatorLength + 1) / 2, 0);
+            capsuleCollider.size = new Vector2(0.8659766f * (alligatorLength + 1) + 0.5f, 0.5f);
 
 
-            transform.rotation = Quaternion.Euler(0, 0, 90f + rotate * 360f / (animalLength * 6f + 6f));
+            transform.rotation = Quaternion.Euler(0, 0, 90f + rotate * 360f / (alligatorLength * 6f + 6f));
         }
     }
 #endif

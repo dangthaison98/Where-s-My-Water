@@ -1676,6 +1676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 452269740}
     m_Modifications:
+    - target: {fileID: 1735235966430725713, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: alligatorLength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2888608454907765578, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Name
       value: Alligator
