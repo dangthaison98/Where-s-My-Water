@@ -59,11 +59,11 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition), true);
     }
     private void OnMouseUp()
     {
-        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)));
+        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
 
         if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
         {
@@ -106,36 +106,43 @@ public class AlligatorControl : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void CaculatePosition(Vector3 pos)
+    private void CaculatePosition(Vector3 pos, bool isUpdate)
     {
         Vector2 difference = pos - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-
+        if (isUpdate)
+        {
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 20 * Time.deltaTime));
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+        }
+        
         if (alligatorLength == 0) return;
 
         //Resize Animal
-        if (rotZ >= -30 && rotZ < 30)
+        if ((rb.rotation >= 0 && rb.rotation < 30) || (rb.rotation >= 330 && rb.rotation < 360))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[0], mainPos[1]);
         }
-        else if (rotZ >= 30 && rotZ < 90)
+        else if (rb.rotation >= 30 && rb.rotation < 90)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[1], mainPos[2]);
         }
-        else if (rotZ >= 90 && rotZ < 150)
+        else if (rb.rotation >= 90 && rb.rotation < 150)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[2], mainPos[3]);
         }
-        else if ((rotZ >= 150 && rotZ <= 180) || (rotZ >= -180 && rotZ < -150))
+        else if ((rb.rotation >= 150 && rb.rotation < 210))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[3], mainPos[4]);
         }
-        else if (rotZ >= -150 && rotZ < -90)
+        else if (rb.rotation >= 210 && rb.rotation < 270)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[4], mainPos[5]);
