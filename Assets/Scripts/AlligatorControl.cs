@@ -100,7 +100,7 @@ public class AlligatorControl : MonoBehaviour
     {
         while (Vector2.Distance(transform.position, Vector2.zero) < 20)
         {
-            transform.position += transform.right * 10 * Time.deltaTime;
+            transform.position += transform.right * 5 * Time.deltaTime;
             yield return null;
         }
         Destroy(gameObject);
@@ -163,7 +163,6 @@ public class AlligatorControl : MonoBehaviour
 
 #if UNITY_EDITOR
     [Title("Editor"), Space(100)]
-    [Min(0)]
     public GameObject tail;
     public int rotate;
     public bool isFlip;
