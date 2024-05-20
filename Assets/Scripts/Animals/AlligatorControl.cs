@@ -114,8 +114,8 @@ public class AlligatorControl : MonoBehaviour
         if (gameObject.layer == 3 && !isColli)
         {
             isColli = true;
+            bodyRenderer.sprite = redBody;
             headAnim.AnimationName = "run4";
-            bodyRenderer.sprite = yellowBody;
             tailAnim.AnimationName = "run4";
             Invoke(nameof(ReturnIdle), 1f);
         }
@@ -123,6 +123,7 @@ public class AlligatorControl : MonoBehaviour
     void ReturnIdle()
     {
         int randomNum = UnityEngine.Random.Range(0, 2);
+        bodyRenderer.sprite = normalBody;
         if (randomNum == 0)
         {
             headAnim.AnimationName = "run1";
@@ -133,7 +134,6 @@ public class AlligatorControl : MonoBehaviour
             headAnim.AnimationName = "run2";
             tailAnim.AnimationName = "run2";
         }
-        bodyRenderer.sprite = normalBody;
         isColli = false;
     }
 
