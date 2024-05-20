@@ -25,6 +25,7 @@ public class TurtleControl : MonoBehaviour
         if (!Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal")))
         {
             Collider.enabled = false;
+            anim.timeScale = 2;
             anim.AnimationName = "rua 2";
             smokeEffect.SetActive(true);
             StartCoroutine(RunOut());
