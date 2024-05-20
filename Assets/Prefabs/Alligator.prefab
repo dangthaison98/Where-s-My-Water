@@ -295,6 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3400829960970238557}
+  - component: {fileID: 3652074136211182365}
   m_Layer: 0
   m_Name: Alligator Holder
   m_TagString: Untagged
@@ -320,6 +321,38 @@ Transform:
   - {fileID: 3504293260074169972}
   m_Father: {fileID: 6173100187580965700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3652074136211182365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284535552110647119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bfc56ae0a461a40953a4af815b04e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  scaleSettings:
+    startFromCurrent: 0
+    startValue: {x: 0, y: 0, z: -0.017452406, w: 0.9998477}
+    endValue: {x: 0, y: 0, z: 0.017452406, w: 0.9998477}
+    settings:
+      duration: 1
+      ease: 0
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: -1
+      cycleMode: 1
+      startDelay: 0
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!1 &1130971205941066936
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +437,6 @@ MonoBehaviour:
   capsuleCollider: {fileID: 8880655605489451544}
   head: {fileID: 5604664491008023444}
   body: {fileID: 4078458816991287118}
-  alligatorHolder: {fileID: 0}
   headAnim: {fileID: 2747850899680247533}
   bodyRenderer: {fileID: 8640075537352357497}
   tailAnim: {fileID: 76223341345281750}
