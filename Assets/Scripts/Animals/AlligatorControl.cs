@@ -154,27 +154,27 @@ public class AlligatorControl : MonoBehaviour
         if (alligatorLength == 0) return;
 
         //Resize Animal
-        if ((rb.rotation >= 0 && rb.rotation < 30) || (rb.rotation >= 330 && rb.rotation < 360))
+        if ((transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 30) || (transform.eulerAngles.z >= 330 && transform.eulerAngles.z < 360))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[0], mainPos[1]);
         }
-        else if (rb.rotation >= 30 && rb.rotation < 90)
+        else if (transform.eulerAngles.z >= 30 && transform.eulerAngles.z < 90)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[1], mainPos[2]);
         }
-        else if (rb.rotation >= 90 && rb.rotation < 150)
+        else if (transform.eulerAngles.z >= 90 && transform.eulerAngles.z < 150)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[2], mainPos[3]);
         }
-        else if ((rb.rotation >= 150 && rb.rotation < 210))
+        else if ((transform.eulerAngles.z >= 150 && transform.eulerAngles.z < 210))
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[3], mainPos[4]);
         }
-        else if (rb.rotation >= 210 && rb.rotation < 270)
+        else if (transform.eulerAngles.z >= 210 && transform.eulerAngles.z < 270)
         {
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[4], mainPos[5]);
@@ -188,8 +188,10 @@ public class AlligatorControl : MonoBehaviour
         head.transform.localPosition = checkPoint.localPosition + headPos;
         body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
+        if (isUpdate) return;
+
         capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
-        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.2659766f, 0.7f);
+        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.1659766f, 0.6f);
     }
 
 
@@ -270,7 +272,7 @@ public class AlligatorControl : MonoBehaviour
             body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
             capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
-            capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.2659766f, 0.7f);
+            capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.1659766f, 0.6f);
         }
         else
         {
@@ -279,7 +281,7 @@ public class AlligatorControl : MonoBehaviour
             body.SetActive(false);
 
             capsuleCollider.offset = new Vector2(0.8659766f * (alligatorLength + 1) / 2, 0);
-            capsuleCollider.size = new Vector2(0.8659766f * (alligatorLength + 1) + 0.7f, 0.7f);
+            capsuleCollider.size = new Vector2(0.8659766f * (alligatorLength + 1) + 0.6f, 0.6f);
 
 
             transform.rotation = Quaternion.Euler(0, 0, 90f + rotate * 360f / (alligatorLength * 6f + 6f));
