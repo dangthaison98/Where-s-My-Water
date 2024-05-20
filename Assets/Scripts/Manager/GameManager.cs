@@ -21,6 +21,6 @@ public class GameManager : MonoBehaviour
 
     private void InitLevel(AsyncOperationHandle<GameObject> handle)
     {
-        
+        UIManager.Instance.changeSceneAnimator.enabled = true;
     }
 }
