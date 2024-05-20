@@ -40,7 +40,7 @@ public class AlligatorControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.centerOfMass = Vector2.zero;
 
-
+        LevelControl.Instance.animalCount++;
 
         if (alligatorLength == 0) return;
         mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), -30);
@@ -105,6 +105,7 @@ public class AlligatorControl : MonoBehaviour
             transform.position += transform.right * 5 * Time.deltaTime;
             yield return null;
         }
+        LevelControl.Instance.CheckCompleteLevel();
         Destroy(gameObject);
     }
 

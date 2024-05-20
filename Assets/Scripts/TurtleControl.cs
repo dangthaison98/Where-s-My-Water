@@ -14,6 +14,11 @@ public class TurtleControl : MonoBehaviour
     [Title("Effect")]
     public GameObject smokeEffect;
 
+    private void Start()
+    {
+        LevelControl.Instance.animalCount++;
+    }
+
     private void OnMouseDown()
     {
         gameObject.layer = 0;
@@ -38,6 +43,7 @@ public class TurtleControl : MonoBehaviour
             transform.position += transform.up * 5 * Time.deltaTime;
             yield return null;
         }
+        LevelControl.Instance.CheckCompleteLevel();
         Destroy(gameObject);
     }
 

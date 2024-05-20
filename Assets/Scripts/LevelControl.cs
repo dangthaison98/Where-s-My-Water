@@ -10,7 +10,7 @@ public class LevelControl : MonoBehaviour
 
     public Tilemap mapGrid;
 
-    private int animalCount;
+    [HideInInspector] public int animalCount;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class LevelControl : MonoBehaviour
 
         if(animalCount <= 0)
         {
-
+            //Win
         }
     }
 }
