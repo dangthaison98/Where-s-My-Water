@@ -95,7 +95,7 @@ public class AlligatorControl : MonoBehaviour
         }
         bodyRenderer.sprite = normalBody;
 
-        gameObject.layer = LayerMask.GetMask("Animal");
+        gameObject.layer = 3;
     }
 
     IEnumerator RunOut()

@@ -33,7 +33,7 @@ public class TurtleControl : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        gameObject.layer = LayerMask.GetMask("Animal");
+        gameObject.layer = 3;
     }
 
     IEnumerator RunOut()
