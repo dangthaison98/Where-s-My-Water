@@ -22,7 +22,7 @@ public class TurtleControl : MonoBehaviour
     private void OnMouseDown()
     {
         gameObject.layer = 0;
-        if (!Physics2D.Raycast(transform.position, transform.right, 10, LayerMask.GetMask("Animal")))
+        if (!Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal")))
         {
             Collider.enabled = false;
             anim.AnimationName = "rua 2";
