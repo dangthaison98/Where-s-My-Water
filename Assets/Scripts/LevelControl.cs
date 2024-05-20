@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class LevelControl : MonoBehaviour
@@ -24,7 +25,7 @@ public class LevelControl : MonoBehaviour
 
         if(animalCount <= 0)
         {
-            //Win
+            SceneManager.LoadScene(0);
         }
     }
 }

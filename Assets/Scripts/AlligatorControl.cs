@@ -100,12 +100,17 @@ public class AlligatorControl : MonoBehaviour
 
     IEnumerator RunOut()
     {
-        while (Vector2.Distance(transform.position, Vector2.zero) < 20)
+        while (Vector2.Distance(transform.position, Vector2.zero) < 10)
         {
             transform.position += transform.right * 5 * Time.deltaTime;
             yield return null;
         }
         LevelControl.Instance.CheckCompleteLevel();
+        while (Vector2.Distance(transform.position, Vector2.zero) < 20)
+        {
+            transform.position += transform.right * 5 * Time.deltaTime;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 
