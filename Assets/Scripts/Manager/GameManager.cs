@@ -6,9 +6,17 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
+    public int maxLevel;
+
     private void Awake()
     {
-        Addressables.InstantiateAsync("Level " + DataManager.GetLevel()).Completed += InitLevel;
+        Instance = this;
+
+        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
+
+        Addressables.InstantiateAsync("Level " + currentlevel).Completed += InitLevel;
     }
 
     private void InitLevel(AsyncOperationHandle<GameObject> handle)

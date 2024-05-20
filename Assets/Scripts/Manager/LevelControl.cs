@@ -25,7 +25,7 @@ public class LevelControl : MonoBehaviour
 
         if(animalCount <= 0)
         {
-            SceneManager.LoadScene(0);
+            DataManager.CompleteLevel();
         }
     }
 }
