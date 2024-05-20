@@ -54,14 +54,14 @@ public class TurtleControl : MonoBehaviour
 
 #if UNITY_EDITOR
     [Title("Editor"), Space(100)]
-    [Range(1, 6)]
-    public int rotate;
+    [Range(1, 12)]
+    public int rotate = 1;
     private Tilemap tilemap;
 
     [Button(ButtonHeight = 100)]
     private void BakeAnimal()
     {
-        float rotZ1 = rotate * 60;
+        float rotZ1 = rotate * 30;
         transform.rotation = Quaternion.Euler(0, 0, rotZ1);
 
         if (tilemap == null) { tilemap = FindObjectOfType<Tilemap>(); }
