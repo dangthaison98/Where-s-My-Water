@@ -1,0 +1,51 @@
+sap lap end game.png
+size:290,292
+filter:Linear,Linear
+pma:true
+Layer 1
+bounds:2,177,112,113
+offsets:2,4,118,124
+Layer 10
+bounds:2,55,102,120
+offsets:7,6,116,127
+Layer 11
+bounds:235,102,49,48
+offsets:21,4,74,69
+Layer 12
+bounds:174,12,46,46
+offsets:5,5,56,56
+Layer 13
+bounds:116,121,67,66
+offsets:7,7,81,80
+Layer 14
+bounds:174,60,59,59
+offsets:18,2,83,85
+Layer 15
+bounds:235,54,46,49
+offsets:6,5,68,56
+rotate:90
+Layer 2
+bounds:106,4,63,48
+offsets:4,5,68,71
+Layer 3
+bounds:106,54,66,65
+offsets:7,7,80,79
+Layer 4
+bounds:2,2,51,48
+offsets:4,5,56,58
+rotate:90
+Layer 5
+bounds:116,189,99,101
+offsets:1,7,117,116
+Layer 6
+bounds:52,4,52,49
+offsets:15,9,81,64
+Layer 7
+bounds:217,152,68,67
+offsets:2,7,77,80
+Layer 8
+bounds:222,9,43,43
+offsets:6,4,55,53
+Layer 9
+bounds:217,221,71,69
+offsets:7,8,85,85
