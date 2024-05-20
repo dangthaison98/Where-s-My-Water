@@ -1,11 +1,20 @@
 using Sirenix.OdinInspector;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class MatchGrid : MonoBehaviour
+public class OysterControl : MonoBehaviour
 {
+    [Title("Animation")]
+    public SkeletonAnimation anim;
+
+    private void Start()
+    {
+        anim.timeScale = Random.Range(0.8f, 1.2f);
+    }
+
 #if UNITY_EDITOR
     private Tilemap tilemap;
 
