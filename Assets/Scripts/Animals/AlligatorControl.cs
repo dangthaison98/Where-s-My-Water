@@ -54,6 +54,7 @@ public class AlligatorControl : MonoBehaviour
     private void OnMouseDown()
     {
         gameObject.layer = 0;
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
 
         CancelInvoke();
         isColli = false;
@@ -88,6 +89,7 @@ public class AlligatorControl : MonoBehaviour
         bodyRenderer.sprite = normalBody;
 
         gameObject.layer = 3;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     IEnumerator RunOut()
@@ -107,9 +109,9 @@ public class AlligatorControl : MonoBehaviour
     }
 
     bool isColli;
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(gameObject.layer == 3 && !isColli)
+        if (gameObject.layer == 3 && !isColli)
         {
             isColli = true;
             headAnim.AnimationName = "run4";
