@@ -336,10 +336,10 @@ MonoBehaviour:
   playOnAwake: 1
   scaleSettings:
     startFromCurrent: 0
-    startValue: {x: 0, y: 0, z: -0.017452406, w: 0.9998477}
-    endValue: {x: 0, y: 0, z: 0.017452406, w: 0.9998477}
+    startValue: {x: 0, y: 0, z: 0.004363436, w: -0.99999046}
+    endValue: {x: 0, y: 0, z: 0.004363309, w: 0.99999046}
     settings:
-      duration: 1
+      duration: 0.5
       ease: 0
       customEase:
         serializedVersion: 2
