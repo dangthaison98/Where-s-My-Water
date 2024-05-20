@@ -1,0 +1,128 @@
+ech ani.png
+size:752,142
+filter:Linear,Linear
+pma:true
+Group 3
+bounds:700,56,24,24
+offsets:1,1,26,26
+Group 3 b
+bounds:674,56,24,24
+offsets:1,1,26,26
+Layer 5
+bounds:734,54,11,12
+offsets:1,1,13,14
+Layer 5 b
+bounds:726,68,11,12
+offsets:1,1,13,14
+chan 1 do
+bounds:464,6,43,48
+offsets:1,1,45,50
+chan 1 vang
+bounds:509,6,43,48
+offsets:1,1,45,50
+chan 1 xanh
+bounds:554,6,43,48
+offsets:1,1,45,50
+chan 1b do
+bounds:599,6,43,48
+offsets:1,1,45,50
+chan 1b vang
+bounds:644,6,43,48
+offsets:1,1,45,50
+chan 1b xanh
+bounds:689,6,43,48
+offsets:1,1,45,50
+chan 2 do
+bounds:530,82,35,58
+offsets:1,1,37,60
+chan 2 vang
+bounds:567,82,35,58
+offsets:1,1,37,60
+chan 2 xanh
+bounds:604,82,35,58
+offsets:1,1,37,60
+chan 2b do
+bounds:641,82,35,58
+offsets:1,1,37,60
+chan 2b vang
+bounds:678,82,35,58
+offsets:1,1,37,60
+chan 2b xanh
+bounds:715,82,35,58
+offsets:1,1,37,60
+chan 3 do
+bounds:440,56,37,24
+offsets:1,1,39,26
+chan 3 vang
+bounds:479,56,37,24
+offsets:1,1,39,26
+chan 3 xanh
+bounds:518,56,37,24
+offsets:1,1,39,26
+chan 3a xanh
+bounds:557,56,37,24
+offsets:1,1,39,26
+chan 3b do
+bounds:596,56,37,24
+offsets:1,1,39,26
+chan 3b vang
+bounds:635,56,37,24
+offsets:1,1,39,26
+mieng b do
+bounds:224,3,43,58
+offsets:2,1,46,60
+rotate:90
+mieng b vang
+bounds:284,3,43,58
+offsets:2,1,46,60
+rotate:90
+mieng b xanh
+bounds:344,3,43,58
+offsets:2,1,46,60
+rotate:90
+mieng do
+bounds:404,3,43,58
+offsets:1,1,46,60
+rotate:90
+mieng vang
+bounds:440,82,43,58
+offsets:1,1,46,60
+mieng xanh
+bounds:485,82,43,58
+offsets:1,1,46,60
+tay p do
+bounds:2,2,44,35
+offsets:2,1,47,37
+rotate:90
+tay p vang
+bounds:39,2,44,35
+offsets:2,1,47,37
+rotate:90
+tay p xanh
+bounds:76,2,44,35
+offsets:2,1,47,37
+rotate:90
+tay t do
+bounds:113,2,44,35
+offsets:1,1,47,37
+rotate:90
+tay t vang
+bounds:150,2,44,35
+offsets:1,1,47,37
+rotate:90
+tay t xanh
+bounds:187,2,44,35
+offsets:1,1,47,37
+rotate:90
+than do
+bounds:2,48,92,144
+offsets:1,1,94,146
+rotate:90
+than vang
+bounds:148,48,92,144
+offsets:1,1,94,146
+rotate:90
+than xanh
+bounds:294,48,92,144
+offsets:1,1,94,146
+rotate:90

@@ -117,7 +117,7 @@ public class AlligatorControl : MonoBehaviour
             bodyRenderer.sprite = redBody;
             headAnim.AnimationName = "run4";
             tailAnim.AnimationName = "run4";
-            Invoke(nameof(ReturnIdle), 1f);
+            Invoke(nameof(ReturnIdle), 0.5f);
         }
     }
     void ReturnIdle()
