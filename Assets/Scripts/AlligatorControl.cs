@@ -112,7 +112,7 @@ public class AlligatorControl : MonoBehaviour
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         if (isUpdate)
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 20 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 50 * Time.deltaTime));
         }
         else
         {

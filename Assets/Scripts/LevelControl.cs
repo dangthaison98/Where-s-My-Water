@@ -13,5 +13,6 @@ public class LevelControl : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        Application.targetFrameRate = 60;
     }
 }
