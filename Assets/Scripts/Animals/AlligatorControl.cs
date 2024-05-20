@@ -188,8 +188,6 @@ public class AlligatorControl : MonoBehaviour
         head.transform.localPosition = checkPoint.localPosition + headPos;
         body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
-        if (isUpdate) return;
-
         capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
         capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.1659766f, 0.6f);
     }
