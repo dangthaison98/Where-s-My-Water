@@ -55,6 +55,7 @@ public class AlligatorControl : MonoBehaviour
     {
         gameObject.layer = 0;
 
+        CancelInvoke();
         headAnim.AnimationName = "run3";
         bodyRenderer.sprite = yellowBody;
         tailAnim.AnimationName = "run3";
@@ -112,6 +113,7 @@ public class AlligatorControl : MonoBehaviour
             headAnim.AnimationName = "run4";
             bodyRenderer.sprite = yellowBody;
             tailAnim.AnimationName = "run4";
+            Invoke(nameof(ReturnIdle), 1f);
         }
     }
     void ReturnIdle()
