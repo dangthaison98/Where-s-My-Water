@@ -56,6 +56,7 @@ public class AlligatorControl : MonoBehaviour
         gameObject.layer = 0;
 
         CancelInvoke();
+        isColli = false;
         headAnim.AnimationName = "run3";
         bodyRenderer.sprite = yellowBody;
         tailAnim.AnimationName = "run3";
@@ -105,11 +106,12 @@ public class AlligatorControl : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    bool isColli;
     private void OnCollisionEnter(Collision collision)
     {
-        if(gameObject.layer == 3)
+        if(gameObject.layer == 3 && !isColli)
         {
+            isColli = true;
             headAnim.AnimationName = "run4";
             bodyRenderer.sprite = yellowBody;
             tailAnim.AnimationName = "run4";
@@ -130,6 +132,7 @@ public class AlligatorControl : MonoBehaviour
             tailAnim.AnimationName = "run2";
         }
         bodyRenderer.sprite = normalBody;
+        isColli = false;
     }
 
 
