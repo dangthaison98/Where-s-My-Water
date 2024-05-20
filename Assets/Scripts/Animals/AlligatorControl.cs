@@ -42,6 +42,8 @@ public class AlligatorControl : MonoBehaviour
 
         LevelControl.Instance.animalCount++;
 
+        ReturnIdle();
+
         if (alligatorLength == 0) return;
         mainPos[0] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), -30);
         mainPos[1] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 30);
