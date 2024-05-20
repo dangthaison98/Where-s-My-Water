@@ -82,17 +82,7 @@ public class AlligatorControl : MonoBehaviour
             return;
         }
         ////////////////////////////////////////////////
-        int randomNum = UnityEngine.Random.Range(0, 2);
-        if (randomNum == 0)
-        {
-            headAnim.AnimationName = "run1";
-            tailAnim.AnimationName = "run1";
-        }
-        else
-        {
-            headAnim.AnimationName = "run2";
-            tailAnim.AnimationName = "run2";
-        }
+        ReturnIdle();
         bodyRenderer.sprite = normalBody;
 
         gameObject.layer = 3;
@@ -113,6 +103,33 @@ public class AlligatorControl : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(gameObject.layer == 3)
+        {
+            headAnim.AnimationName = "run4";
+            bodyRenderer.sprite = yellowBody;
+            tailAnim.AnimationName = "run4";
+        }
+    }
+    void ReturnIdle()
+    {
+        int randomNum = UnityEngine.Random.Range(0, 2);
+        if (randomNum == 0)
+        {
+            headAnim.AnimationName = "run1";
+            tailAnim.AnimationName = "run1";
+        }
+        else
+        {
+            headAnim.AnimationName = "run2";
+            tailAnim.AnimationName = "run2";
+        }
+        bodyRenderer.sprite = normalBody;
+    }
+
 
     private void CaculatePosition(Vector3 pos, bool isUpdate)
     {
