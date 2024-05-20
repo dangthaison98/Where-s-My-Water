@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,8 +9,16 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    [Title("Main UI")]
     public TextMeshProUGUI levelText;
 
+    [Title("Panel")]
+    public GameObject completePanel;
+
+    [Title("Effect")]
+    public GameObject fireworkEffect;
+
+    [Title("Change Scene")]
     public Animator changeSceneAnimator;
 
     private void Awake()
@@ -19,6 +28,25 @@ public class UIManager : MonoBehaviour
         levelText.text = (DataManager.GetLevel() + 1).ToString();
     }
 
+    public void CompleteLevel()
+    {
+        StartCoroutine(PlayCompleteLevel());
+    }
+    IEnumerator PlayCompleteLevel()
+    {
+        fireworkEffect.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        completePanel.SetActive(true);
+    }
+
+    #region Button
+    public void NextLevelButton()
+    {
+        ActiveChangeScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    #endregion
+
+    #region Change scene
     public void ActiveChangeScene(int scene)
     {
         ChangeSceneEffect(scene);
@@ -35,4 +63,5 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
+    #endregion
 }
