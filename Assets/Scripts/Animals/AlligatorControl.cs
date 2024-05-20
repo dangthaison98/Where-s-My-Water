@@ -189,7 +189,7 @@ public class AlligatorControl : MonoBehaviour
         body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
         capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
-        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
+        capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.2659766f, 0.7f);
     }
 
 
@@ -270,7 +270,7 @@ public class AlligatorControl : MonoBehaviour
             body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);
 
             capsuleCollider.offset = new Vector2((head.transform.localPosition.x + 0.5659766f) / 2, 0);
-            capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.0659766f, 0.5f);
+            capsuleCollider.size = new Vector2(head.transform.localPosition.x + 1.2659766f, 0.7f);
         }
         else
         {
@@ -279,7 +279,7 @@ public class AlligatorControl : MonoBehaviour
             body.SetActive(false);
 
             capsuleCollider.offset = new Vector2(0.8659766f * (alligatorLength + 1) / 2, 0);
-            capsuleCollider.size = new Vector2(0.8659766f * (alligatorLength + 1) + 0.5f, 0.5f);
+            capsuleCollider.size = new Vector2(0.8659766f * (alligatorLength + 1) + 0.7f, 0.7f);
 
 
             transform.rotation = Quaternion.Euler(0, 0, 90f + rotate * 360f / (alligatorLength * 6f + 6f));
