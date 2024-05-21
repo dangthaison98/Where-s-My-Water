@@ -28,6 +28,9 @@ public class TurtleControl : MonoBehaviour
             anim.timeScale = 2;
             anim.AnimationName = "rua 2";
             smokeEffect.SetActive(true);
+
+            SoundManager.instance.PlayAlligatorRunSound();
+
             StartCoroutine(RunOut());
             return;
         }
