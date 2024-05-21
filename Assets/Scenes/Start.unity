@@ -2899,7 +2899,6 @@ GameObject:
   - component: {fileID: 191707525}
   - component: {fileID: 191707527}
   - component: {fileID: 191707526}
-  - component: {fileID: 191707528}
   m_Layer: 5
   m_Name: Ticket Text (TMP)
   m_TagString: Untagged
@@ -3023,18 +3022,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191707524}
   m_CullTransparentMesh: 1
---- !u!114 &191707528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191707524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94cd67fb00eb0ce4f8505a009b822205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &195206812
 GameObject:
   m_ObjectHideFlags: 0
@@ -32291,18 +32278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6607934230946648896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6607934230946648898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6607934230946648897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32333,8 +32308,6 @@ GameObject:
   - component: {fileID: 6607934230946648897}
   - component: {fileID: 6607934230946648901}
   - component: {fileID: 6607934230946648902}
-  - component: {fileID: 6607934230946648903}
-  - component: {fileID: 6607934230946648896}
   m_Layer: 5
   m_Name: glow
   m_TagString: Untagged
@@ -32380,18 +32353,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6607934230946648903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6607934230946648898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6607934231235627136
 RectTransform:
   m_ObjectHideFlags: 0
