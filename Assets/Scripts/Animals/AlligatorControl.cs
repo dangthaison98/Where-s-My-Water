@@ -53,10 +53,16 @@ public class AlligatorControl : MonoBehaviour
         mainPos[5] = Caculate.FindPointInCircle(transform.position, 0.8659766f * (alligatorLength + 1), 270);
     }
 
+    private float countTimeTouch;
+    private Vector3 standPos;
     private void OnMouseDown()
     {
         gameObject.layer = 0;
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        countTimeTouch = 0;
+
+        standPos = LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position));
 
         CancelInvoke();
         isColli = false;
@@ -65,12 +71,23 @@ public class AlligatorControl : MonoBehaviour
         tailAnim.AnimationName = "run3";
     }
     private void OnMouseDrag()
-    {
+    { 
+        if(countTimeTouch < 0.2f)
+        {
+            countTimeTouch += Time.deltaTime;
+        }
         CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition), true);
     }
     private void OnMouseUp()
     {
-        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
+        if (countTimeTouch < 0.2f)
+        {
+            CaculatePosition(standPos, false);
+        }
+        else
+        {
+            CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
+        }
 
         if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
         {
