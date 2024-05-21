@@ -979,7 +979,6 @@ namespace RejectedGames
 			GUIStyle guiStyle = GUI.skin.FindStyle(styleName) ?? EditorGUIUtility.GetBuiltinSkin(EditorSkin.Inspector).FindStyle(styleName);
 			if (guiStyle == null)
 			{
-				Debug.LogError((object)("Missing built-in guistyle " + styleName));
 				guiStyle = GUI.skin.button;
 			}
 			return guiStyle;
