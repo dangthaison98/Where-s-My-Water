@@ -83,6 +83,8 @@ public class AlligatorControl : MonoBehaviour
             tailAnim.timeScale = 2;
             smokeEffect.SetActive(true);
 
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
             SoundManager.instance.PlayAlligatorRunSound();
 
             StartCoroutine(RunOut());
