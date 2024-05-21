@@ -34184,7 +34184,7 @@ GameObject:
   - component: {fileID: 6737537546179478323}
   - component: {fileID: 6737537546179478322}
   - component: {fileID: 6737537546179478317}
-  - component: {fileID: 6737537546179478320}
+  - component: {fileID: 6737537546179478324}
   m_Layer: 5
   m_Name: Bonus Button
   m_TagString: Untagged
@@ -34192,22 +34192,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &6737537546179478320
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737537546179478319}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b072ae771f3093d4dac1850ef7195614, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b072ae771f3093d4dac1850ef7195614, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &6737537546179478322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34246,6 +34230,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6737537546179478319}
   m_CullTransparentMesh: 1
+--- !u!114 &6737537546179478324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737537546179478319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8751cbaba625df74688e83875a4d7acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  scaleSettings:
+    startFromCurrent: 0
+    startValue: 0.95
+    endValue: 1.05
+    settings:
+      duration: 1
+      ease: 4
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: -1
+      cycleMode: 1
+      startDelay: 0
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!1 &6737537546214122576
 GameObject:
   m_ObjectHideFlags: 0
@@ -34928,7 +34944,7 @@ GameObject:
   - component: {fileID: 6737537546620848997}
   - component: {fileID: 6737537546620848996}
   - component: {fileID: 6737537546620848999}
-  - component: {fileID: 6737537546620848998}
+  - component: {fileID: 6737537546620849003}
   m_Layer: 5
   m_Name: Home Button
   m_TagString: Untagged
@@ -34974,22 +34990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6737537546620848993}
   m_CullTransparentMesh: 1
---- !u!111 &6737537546620848998
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737537546620848993}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b072ae771f3093d4dac1850ef7195614, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b072ae771f3093d4dac1850ef7195614, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &6737537546620848999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35066,6 +35066,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 525}
   m_SizeDelta: {x: 700, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6737537546620849003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737537546620848993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8751cbaba625df74688e83875a4d7acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  scaleSettings:
+    startFromCurrent: 0
+    startValue: 0.95
+    endValue: 1.05
+    settings:
+      duration: 1
+      ease: 4
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: -1
+      cycleMode: 1
+      startDelay: 0
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!114 &6737537546637328344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35970,6 +36002,7 @@ GameObject:
   - component: {fileID: 6737537547442878133}
   - component: {fileID: 6737537547442878132}
   - component: {fileID: 6737537547442878135}
+  - component: {fileID: 6737537547442878136}
   m_Layer: 5
   m_Name: No thanks Button
   m_TagString: Untagged
@@ -36024,7 +36057,7 @@ RectTransform:
   m_GameObject: {fileID: 6737537547442878129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6737537547023722457}
@@ -36091,6 +36124,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6737537547442878136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737537547442878129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8751cbaba625df74688e83875a4d7acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  scaleSettings:
+    startFromCurrent: 0
+    startValue: 0
+    endValue: 1
+    settings:
+      duration: 0.5
+      ease: 1
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: 1
+      cycleMode: 0
+      startDelay: 3
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!114 &6737537547684638776
 MonoBehaviour:
   m_ObjectHideFlags: 0
