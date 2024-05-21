@@ -10,6 +10,7 @@ public class LevelControl : MonoBehaviour
     public static LevelControl Instance;
 
     public Tilemap mapGrid;
+    public TileBase choiceTile;
 
     [HideInInspector] public int animalCount;
 

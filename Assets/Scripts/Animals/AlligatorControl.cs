@@ -152,11 +152,17 @@ public class AlligatorControl : MonoBehaviour
         if (isUpdate)
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 50 * Time.deltaTime));
+
+            LevelControl.Instance.mapGrid.ClearAllTiles();
+            LevelControl.Instance.mapGrid.SetTile(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+
+            LevelControl.Instance.mapGrid.ClearAllTiles();
         }
+
         
         if (alligatorLength == 0) return;
 
@@ -191,6 +197,7 @@ public class AlligatorControl : MonoBehaviour
             checkPoint.position = Caculate.GetIntersectionPoint(transform.position, checkPoint.position,
                 mainPos[5], mainPos[0]);
         }
+
 
         head.transform.localPosition = checkPoint.localPosition + headPos;
         body.transform.localScale = new Vector3((head.transform.localPosition.x - 0.3f) * 4, 1, 1);

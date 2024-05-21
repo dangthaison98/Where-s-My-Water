@@ -32,7 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7400774752619072254}
-  - {fileID: 4036493682179506751}
   - {fileID: 1796815402547584654}
   - {fileID: 2692537318901658365}
   - {fileID: 1046379358213432656}
@@ -68,7 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a7aa293f2915e42a669e6dd0575cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapGrid: {fileID: 8090468965309267042}
+  mapGrid: {fileID: 213632601411202696}
+  choiceTile: {fileID: 11400000, guid: 06600accdbdbd174da96355f2b68af7a, type: 2}
   animalCount: 0
 --- !u!1 &4411915898607147646
 GameObject:
@@ -104,7 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4388709776249321702}
+  m_Father: {fileID: 7400774752619072254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &5696872410403539891
 Tilemap:
@@ -3143,6 +3143,150 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4411915898607147646}
+--- !u!1 &5573304810414508740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5152202786665444094}
+  - component: {fileID: 213632601411202696}
+  - component: {fileID: 5954339314384316391}
+  m_Layer: 0
+  m_Name: Choice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5152202786665444094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573304810414508740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7400774752619072254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1839735485 &213632601411202696
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573304810414508740}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileMatrixArray:
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 0
+      e02: 6.917536e+19
+      e03: 6.917536e+19
+      e10: 0
+      e11: 0
+      e12: 6.66e-43
+      e13: 6.66e-43
+      e20: -27133280
+      e21: -38.47809
+      e22: -5.5781297e-19
+      e23: -76695
+      e30: 4.5905e-41
+      e31: 6.68e-43
+      e32: 6.66e-43
+      e33: 6.66e-43
+  m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: 3.7692e-41, g: 3.7692e-41, b: 3.7692e-41, a: 3.7692e-41}
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: -6, y: -4, z: 0}
+  m_Size: {x: 12, y: 9, z: 1}
+  m_TileAnchor: {x: 0, y: 0, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+--- !u!483693784 &5954339314384316391
+TilemapRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573304810414508740}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_ChunkSize: {x: 32, y: 32, z: 32}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_MaxChunkCount: 16
+  m_MaxFrameAge: 16
+  m_SortOrder: 0
+  m_Mode: 0
+  m_DetectChunkCullingBounds: 0
+  m_MaskInteraction: 0
 --- !u!1 &6517658470958233706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,7 +3317,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4036493682179506751}
+  - {fileID: 5152202786665444094}
   m_Father: {fileID: 4388709776249321702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &8090468965309267042
@@ -4249,6 +4395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alligator
       objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4354,6 +4504,10 @@ PrefabInstance:
     - target: {fileID: 2888608454907765578, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Name
       value: Alligator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
@@ -4465,6 +4619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alligator
       objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4566,6 +4724,10 @@ PrefabInstance:
     - target: {fileID: 2888608454907765578, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Name
       value: Alligator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
@@ -4672,6 +4834,10 @@ PrefabInstance:
     - target: {fileID: 3504293260074169972, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_LocalRotation.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
@@ -4815,6 +4981,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4953,6 +5123,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5075,6 +5249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alligator (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5184,6 +5362,10 @@ PrefabInstance:
     - target: {fileID: 2888608454907765578, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Name
       value: Alligator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667342354319960837, guid: 73462473304fbc048a57042487f0ca02, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3953157415722191631, guid: 73462473304fbc048a57042487f0ca02, type: 3}
       propertyPath: m_Mesh
