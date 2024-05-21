@@ -1,10 +1,7 @@
 Group 1 copy 3.png
-size:283,171
+size:171,171
 filter:Linear,Linear
 pma:true
 Ellipse 1
 bounds:2,2,167,167
-offsets:7,7,181,181
-Ellipse_dam
-bounds:171,59,110,110
-offsets:5,5,120,120
+offsets:8,8,183,183
