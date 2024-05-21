@@ -17,13 +17,6 @@ public class StartManager : MonoBehaviour
     public TextMeshProUGUI[] levelText;
     public GameObject[] levelHolders;
 
-    [Title("DailyReward")]
-    public GameObject dailyRewardPanel;
-    public GameObject[] dailyRewardDayImage;
-    public DailyRewardData[] rewardDatas;
-    public GameObject warningDaily;
-    public GameObject claimButton;
-
     [Title("Change Scene")]
     public Animator changeSceneAnimator;
 
@@ -79,16 +72,4 @@ public class StartManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(level);
     }
-}
-
-
-[System.Serializable]
-public struct DailyRewardData
-{
-    public enum RewardType
-    {
-        Coin, Screw, Saw, Ticket
-    }
-    public RewardType type;
-    public int amount;
 }

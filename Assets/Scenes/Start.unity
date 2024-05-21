@@ -1822,10 +1822,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 622575057}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 664355590}
+        m_TargetAssemblyTypeName: DailyReward, Assembly-CSharp
+        m_MethodName: Claim
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4301,11 +4301,6 @@ MonoBehaviour:
   - {fileID: 800604917}
   - {fileID: 697042576}
   - {fileID: 1181924580}
-  dailyRewardPanel: {fileID: 664355586}
-  dailyRewardDayImage: []
-  rewardDatas: []
-  warningDaily: {fileID: 0}
-  claimButton: {fileID: 0}
   changeSceneAnimator: {fileID: 1187292154}
 --- !u!1 &281841750
 GameObject:
@@ -14748,6 +14743,7 @@ GameObject:
   - component: {fileID: 664355587}
   - component: {fileID: 664355589}
   - component: {fileID: 664355588}
+  - component: {fileID: 664355590}
   m_Layer: 5
   m_Name: Daily Panel
   m_TagString: Untagged
@@ -14813,6 +14809,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664355586}
   m_CullTransparentMesh: 1
+--- !u!114 &664355590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664355586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c8e1d0db0798e4daafb2592942bcc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dailyRewardDayImage:
+  - {fileID: 1867582566}
+  - {fileID: 1819358291}
+  - {fileID: 1629307097}
+  - {fileID: 930499445}
+  - {fileID: 819363501}
+  - {fileID: 1772919216}
+  - {fileID: 54178018}
+  rewardDatas:
+  - type: 1
+    amount: 2
+  - type: 0
+    amount: 100
+  - type: 0
+    amount: 150
+  - type: 1
+    amount: 2
+  - type: 0
+    amount: 100
+  - type: 0
+    amount: 150
+  - type: 1
+    amount: 5
+  warningDaily: {fileID: 598752827}
+  claimButtons: {fileID: 622575057}
 --- !u!1 &670068860
 GameObject:
   m_ObjectHideFlags: 0
@@ -36565,10 +36598,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1830103248}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 664355590}
+        m_TargetAssemblyTypeName: DailyReward, Assembly-CSharp
+        m_MethodName: ClaimX2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
