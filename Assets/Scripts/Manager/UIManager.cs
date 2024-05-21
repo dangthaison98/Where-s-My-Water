@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
 
-        levelText.text = (DataManager.GetLevel() + 1).ToString();
+        levelText.text = "Level " + (DataManager.GetLevel() + 1).ToString();
     }
 
     public void CompleteLevel()
