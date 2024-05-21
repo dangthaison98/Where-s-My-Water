@@ -72,10 +72,8 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseDrag()
     { 
-        if(countTimeTouch < 0.2f)
-        {
-            countTimeTouch += Time.deltaTime;
-        }
+        countTimeTouch += Time.deltaTime;
+
         CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition), true);
     }
     private void OnMouseUp()
