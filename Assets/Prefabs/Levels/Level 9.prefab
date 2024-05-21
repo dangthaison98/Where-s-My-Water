@@ -6703,7 +6703,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6047435500018636325, guid: 6c84d032b50ce90449c02a09e0f85574, type: 3}
       propertyPath: m_Name
-      value: Oyster
+      value: Oyster(4)
       objectReference: {fileID: 0}
     - target: {fileID: 8238109894854485396, guid: 6c84d032b50ce90449c02a09e0f85574, type: 3}
       propertyPath: m_LocalPosition.x

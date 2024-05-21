@@ -1,3 +1,4 @@
+using PrimeTween;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,14 @@ public class UIManager : MonoBehaviour
     [Title("Effect")]
     public GameObject fireworkEffect;
 
+    [Title("Reward")]
+    public int baseCoin;
+    public TextMeshProUGUI gainCoinText;
+    public GameObject bonusButton;
+    public GameObject noThankButton;
+    public GameObject nextLevelButton;
+    public RectTransform arrowReward;
+
     [Title("Change Scene")]
     public Animator changeSceneAnimator;
 
@@ -26,6 +35,8 @@ public class UIManager : MonoBehaviour
         Instance = this;
 
         levelText.text = "Level " + (DataManager.GetLevel() + 1).ToString();
+
+        gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
     }
 
     public void CompleteLevel()
@@ -43,6 +54,41 @@ public class UIManager : MonoBehaviour
     public void NextLevelButton()
     {
         ActiveChangeScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BonusReward()
+    {
+        if (DataManager.SpendTicket(1))
+        {
+            arrowReward.GetComponent<Animation>().Stop();
+            if (arrowReward.anchoredPosition.x < 70 && arrowReward.anchoredPosition.x > -70)
+            {
+                baseCoin *= 3;
+                DataManager.EarnCoin(baseCoin);
+                gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
+            }
+            else if (arrowReward.anchoredPosition.x < 210 && arrowReward.anchoredPosition.x > -210)
+            {
+                baseCoin *= 2;
+                DataManager.EarnCoin(baseCoin);
+                gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
+            }
+            else
+            {
+                DataManager.EarnCoin(baseCoin);
+                gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
+            }
+            //coinEffect.SetActive(true);
+            bonusButton.SetActive(false);
+            noThankButton.SetActive(false);
+            nextLevelButton.SetActive(true);
+
+            CurrencyManager.Instance.UpdateCurrency();
+        }
+        else
+        {
+            
+        }
     }
     #endregion
 

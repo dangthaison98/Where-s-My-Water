@@ -683,6 +683,12 @@ MonoBehaviour:
   levelText: {fileID: 1107732506}
   completePanel: {fileID: 6737537547106773034}
   fireworkEffect: {fileID: 2751568924453956213}
+  baseCoin: 5
+  gainCoinText: {fileID: 6737537546214122582}
+  bonusButton: {fileID: 6737537547353542704}
+  noThankButton: {fileID: 6737537547442878129}
+  nextLevelButton: {fileID: 6737537546620848993}
+  arrowReward: {fileID: 6737537547283965005}
   changeSceneAnimator: {fileID: 4742333974818828542}
 --- !u!1 &229140571
 GameObject:
@@ -952,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de80735c9e476041b185a8de09308f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLevel: 5
+  maxLevel: 15
 --- !u!1 &385716237
 GameObject:
   m_ObjectHideFlags: 0
@@ -34162,7 +34168,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 190711797}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextLevelButton
+        m_MethodName: BonusReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34946,7 +34952,7 @@ GameObject:
   - component: {fileID: 6737537546620848999}
   - component: {fileID: 6737537546620849003}
   m_Layer: 5
-  m_Name: Home Button
+  m_Name: Next Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35694,7 +35700,7 @@ GameObject:
   - component: {fileID: 6737537547283965005}
   - component: {fileID: 6737537547283965011}
   - component: {fileID: 6737537547283965010}
-  - component: {fileID: 6737537547283965008}
+  - component: {fileID: 6737537547283965012}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -35721,22 +35727,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &6737537547283965008
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737537547283965004}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 08b24a62292fbef40be2a93a5d406e2f, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 08b24a62292fbef40be2a93a5d406e2f, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &6737537547283965010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35775,6 +35765,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6737537547283965004}
   m_CullTransparentMesh: 1
+--- !u!111 &6737537547283965012
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737537547283965004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 08b24a62292fbef40be2a93a5d406e2f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 08b24a62292fbef40be2a93a5d406e2f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6737537547353542704
 GameObject:
   m_ObjectHideFlags: 0

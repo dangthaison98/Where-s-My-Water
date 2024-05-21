@@ -12,12 +12,19 @@ public class LevelControl : MonoBehaviour
     public Tilemap mapGrid;
     public TileBase choiceTile;
 
+    public float cameraSize = 7.5f;
+
     [HideInInspector] public int animalCount;
 
     private void Awake()
     {
         Instance = this;
         Application.targetFrameRate = 60;
+    }
+    private void Start()
+    {
+        if (Camera.main.aspect < 0.5f)
+            Camera.main.orthographicSize = cameraSize / Camera.main.aspect;
     }
 
     public void CheckCompleteLevel()
