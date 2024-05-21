@@ -83,6 +83,8 @@ public class AlligatorControl : MonoBehaviour
             tailAnim.timeScale = 2;
             smokeEffect.SetActive(true);
 
+            SoundManager.instance.PlayAlligatorRunSound();
+
             StartCoroutine(RunOut());
             return;
         }
@@ -119,6 +121,9 @@ public class AlligatorControl : MonoBehaviour
             bodyRenderer.sprite = redBody;
             headAnim.AnimationName = "run4";
             tailAnim.AnimationName = "run4";
+
+            SoundManager.instance.PlayAlligatorColliSound();
+
             Invoke(nameof(ReturnIdle), 0.5f);
         }
     }
