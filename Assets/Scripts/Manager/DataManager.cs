@@ -6,6 +6,7 @@ public static class DataManager
 {
     public static string LEVEL = "Level";
     public static string COIN = "Coin";
+    public static string TICKET = "Ticket";
 
     //Level
     public static int GetLevel()
@@ -40,6 +41,32 @@ public static class DataManager
         if(GetCoin() >= coin)
         {
             SetCoin(GetCoin() - coin);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //Ticket
+    public static int GetTicket()
+    {
+        return PlayerPrefs.GetInt(TICKET);
+    }
+    public static void SetTicket(int ticket)
+    {
+        PlayerPrefs.SetInt(TICKET, ticket);
+    }
+    public static void EarnTicket(int ticket)
+    {
+        SetTicket(GetTicket() + ticket);
+    }
+    public static bool SpendTicket(int ticket)
+    {
+        if (GetTicket() >= ticket)
+        {
+            SetTicket(GetTicket() - ticket);
             return true;
         }
         else
