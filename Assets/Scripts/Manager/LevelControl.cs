@@ -24,7 +24,9 @@ public class LevelControl : MonoBehaviour
     private void Start()
     {
         if (Camera.main.aspect < 0.5f)
-            Camera.main.orthographicSize = cameraSize / Camera.main.aspect;
+            Camera.main.orthographicSize = cameraSize / Camera.main.aspect  * 0.5f;
+        else
+            Camera.main.orthographicSize = cameraSize;
     }
 
     public void CheckCompleteLevel()
