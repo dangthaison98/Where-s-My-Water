@@ -54,7 +54,7 @@ public class AlligatorControl : MonoBehaviour
     }
 
     private float countTimeTouch;
-    private Vector3 standPos;
+    private Vector3 startPos;
     private void OnMouseDown()
     {
         gameObject.layer = 0;
@@ -62,7 +62,7 @@ public class AlligatorControl : MonoBehaviour
 
         countTimeTouch = 0;
 
-        standPos = LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position));
+        startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         CancelInvoke();
         isColli = false;
@@ -72,20 +72,17 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseDrag()
     { 
-        countTimeTouch += Time.deltaTime;
+        if(countTimeTouch < 0.5f && Vector2.Distance(startPos, Camera.main.ScreenToWorldPoint(Input.mousePosition)) < 0.5f)
+        {
+            countTimeTouch += Time.deltaTime;
+            return;
+        }
 
         CaculatePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition), true);
     }
     private void OnMouseUp()
     {
-        if (countTimeTouch < 0.2f)
-        {
-            CaculatePosition(standPos, false);
-        }
-        else
-        {
-            CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
-        }
+        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
 
         if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
         {
