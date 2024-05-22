@@ -23,7 +23,7 @@ public class FishControl : AnimalBehaviour
     {
         gameObject.layer = 0;
 
-        RaycastHit2D hit = Physics2D.Raycast(fish1.transform.position, transform.right, Vector2.Distance(fish1.transform.position, fish2.transform.position), LayerMask.GetMask("Animal"));
+        RaycastHit2D hit = Physics2D.Raycast(fish1.transform.position, fish1.transform.right, Vector2.Distance(fish1.transform.position, fish2.transform.position), LayerMask.GetMask("Animal"));
         if (!hit)
         {
             collider1.enabled = false;
