@@ -1,43 +1,69 @@
 rua ani.png
-size:110,293
+size:110,590
 filter:Linear,Linear
 pma:true
 chan phai
-bounds:67,79,51,39
+bounds:67,162,51,39
 offsets:1,1,53,41
+rotate:90
+chan phai copy do
+bounds:67,215,51,39
 rotate:90
 chan trai
-bounds:67,26,51,39
+bounds:67,56,51,39
 offsets:1,1,53,41
 rotate:90
+chan trai copy do
+bounds:67,109,51,39
+rotate:90
 dau
-bounds:2,132,50,86
+bounds:2,268,50,86
 offsets:1,1,52,88
 rotate:90
+dau copy do
+bounds:2,320,50,86
+rotate:90
 duoi rua
-bounds:64,2,22,30
+bounds:34,40,22,30
 offsets:1,1,24,32
 rotate:90
+duoi rua copy do
+bounds:2,40,22,30
+rotate:90
 mai rua
-bounds:2,184,106,107
+bounds:2,372,106,107
 offsets:1,1,108,109
+mai rua do
+bounds:2,481,106,107
 mat phai
-bounds:90,163,12,19
+bounds:90,351,12,19
 offsets:1,1,14,21
 mat phai 1
-bounds:2,3,25,29
+bounds:2,13,25,29
 offsets:1,2,27,32
+rotate:90
+mat phai 1 copy do
+bounds:66,29,25,29
+offsets:0,1,25,30
 rotate:90
 mat phai 2
-bounds:33,3,25,29
+bounds:64,2,25,29
 offsets:1,2,27,32
 rotate:90
+mat phai 2 copy
+bounds:33,13,25,29
+offsets:0,1,25,30
+rotate:90
 mat trai
-bounds:90,142,12,19
+bounds:90,330,12,19
 offsets:1,1,14,21
 tay phai
-bounds:2,81,63,49
+bounds:2,166,63,49
 offsets:1,1,65,51
+tay phai copy do
+bounds:2,217,63,49
 tay trai
-bounds:2,30,63,49
+bounds:2,64,63,49
 offsets:1,1,65,51
+tay trai copy do
+bounds:2,115,63,49
