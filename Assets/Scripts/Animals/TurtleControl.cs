@@ -48,6 +48,20 @@ public class TurtleControl : AnimalBehaviour
         gameObject.layer = 3;
     }
 
+    public override void GetCollision()
+    {
+        CancelInvoke();
+        anim.AnimationName = "rua 3";
+
+        SoundManager.instance.PlayAlligatorColliSound();
+
+        Invoke(nameof(ReturnIdle), 0.25f);
+    }
+    void ReturnIdle()
+    {
+        anim.AnimationName = "rua 1";
+    }
+
     IEnumerator RunOut()
     {
         while (Vector2.Distance(transform.position, Vector2.zero) < 10)
