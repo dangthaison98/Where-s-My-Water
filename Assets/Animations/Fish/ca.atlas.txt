@@ -1,0 +1,37 @@
+ca.png
+size:205,255
+filter:Linear,Linear
+pma:true
+long mi
+bounds:2,2,37,35
+offsets:1,1,39,37
+ma hong
+bounds:114,84,76,59
+offsets:8,6,89,67
+mat den
+bounds:123,9,14,15
+offsets:2,2,17,18
+mat trang
+bounds:176,30,24,24
+offsets:1,2,26,27
+mieng hun 1
+bounds:176,56,27,26
+mieng hun 2
+bounds:97,4,24,20
+nham mat
+bounds:74,6,31,21
+offsets:0,0,31,22
+rotate:90
+than
+bounds:2,145,190,108
+tim
+bounds:102,26,72,56
+vay duoi
+bounds:2,39,98,53
+offsets:1,1,100,55
+vay nho
+bounds:41,6,31,31
+offsets:1,1,33,33
+vay tren
+bounds:2,94,110,49
+offsets:1,1,112,51
