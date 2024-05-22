@@ -14,6 +14,7 @@ public class LevelControl : MonoBehaviour
     public Tilemap choiceGrid;
     public TileBase choiceTile;
 
+    public float cameraYPos = -1;
     public float cameraSize = 7.5f;
 
     [HideInInspector] public int animalCount;
@@ -29,6 +30,8 @@ public class LevelControl : MonoBehaviour
             Camera.main.orthographicSize = cameraSize / Camera.main.aspect  * 0.5f;
         else
             Camera.main.orthographicSize = cameraSize;
+
+        Camera.main.transform.position = new Vector3(0, cameraYPos, 0);
     }
 
     public void CheckCompleteLevel()
