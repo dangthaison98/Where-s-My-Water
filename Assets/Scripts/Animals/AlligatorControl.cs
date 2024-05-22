@@ -165,7 +165,7 @@ public class AlligatorControl : AnimalBehaviour
 
         SoundManager.instance.PlayAlligatorColliSound();
 
-        Invoke(nameof(ReturnIdle), 0.5f);
+        Invoke(nameof(ReturnIdle), 0.25f);
     }
     void ReturnIdle()
     {
