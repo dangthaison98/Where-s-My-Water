@@ -22,7 +22,8 @@ public class TurtleControl : MonoBehaviour, IAnimalBehaviour
     private void OnMouseDown()
     {
         gameObject.layer = 0;
-        if (!Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal")))
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal"));
+        if (!hit)
         {
             Collider.enabled = false;
             anim.timeScale = 2;
@@ -33,6 +34,13 @@ public class TurtleControl : MonoBehaviour, IAnimalBehaviour
 
             StartCoroutine(RunOut());
             return;
+        }
+        else
+        {
+            if (hit.collider.TryGetComponent<IAnimalBehaviour>(out IAnimalBehaviour animalBehaviour))
+            {
+                animalBehaviour.GetCollision();
+            }
         }
     }
     private void OnMouseUp()
