@@ -152,11 +152,12 @@ public class AlligatorControl : MonoBehaviour, IAnimalBehaviour
     {
         if (gameObject.layer == 3 && !isColli)
         {
-            IAnimalBehaviour();
+            GetCollision();
         }
     }
-    void IAnimalBehaviour()
+    public void GetCollision()
     {
+        CancelInvoke();
         isColli = true;
         bodyRenderer.sprite = redBody;
         headAnim.AnimationName = "run4";
