@@ -1,0 +1,16 @@
+song ani.png
+size:4155,1714
+filter:Linear,Linear
+pma:true
+bong do
+bounds:3385,9,1703,416
+rotate:90
+s1
+bounds:2967,2,1710,416
+rotate:90
+s2
+bounds:3803,2,1710,350
+rotate:90
+s3
+bounds:2,2,1710,2963
+rotate:90
