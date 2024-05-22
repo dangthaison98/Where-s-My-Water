@@ -55,6 +55,7 @@ public class AlligatorControl : MonoBehaviour
 
     private float countTimeTouch;
     private Vector3 startPos;
+    private Vector3 startPosOfCheckPoint;
     private void OnMouseDown()
     {
         gameObject.layer = 0;
@@ -63,6 +64,7 @@ public class AlligatorControl : MonoBehaviour
         countTimeTouch = 0;
 
         startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        startPosOfCheckPoint = checkPoint.position;
 
         CancelInvoke();
         isColli = false;
@@ -86,7 +88,14 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position)), false);
+        if (LevelControl.Instance.groundGrid.GetTile(LevelControl.Instance.groundGrid.WorldToCell(checkPoint.position)))
+        {
+            CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position)), false);
+        }
+        else
+        {
+            CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(startPosOfCheckPoint)), false);
+        }
 
         if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
         {
@@ -172,7 +181,10 @@ public class AlligatorControl : MonoBehaviour
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 20 * Time.deltaTime));
 
             LevelControl.Instance.choiceGrid.ClearAllTiles();
-            LevelControl.Instance.choiceGrid.SetTile(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
+            if (LevelControl.Instance.groundGrid.GetTile(LevelControl.Instance.groundGrid.WorldToCell(checkPoint.position)))
+            {
+                LevelControl.Instance.choiceGrid.SetTile(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
+            }
         }
         else
         {
