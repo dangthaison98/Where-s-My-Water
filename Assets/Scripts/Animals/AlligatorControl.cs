@@ -7,7 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AlligatorControl : MonoBehaviour, IAnimalBehaviour
+public class AlligatorControl : AnimalBehaviour
 {
     [Title("Data")]
     [Range(0, 9)]
@@ -118,7 +118,7 @@ public class AlligatorControl : MonoBehaviour, IAnimalBehaviour
         }
         else
         {
-            if (hit.collider.TryGetComponent<IAnimalBehaviour>(out IAnimalBehaviour animalBehaviour))
+            if (hit.collider.TryGetComponent<AnimalBehaviour>(out AnimalBehaviour animalBehaviour))
             {
                 animalBehaviour.GetCollision();
             }
@@ -155,7 +155,7 @@ public class AlligatorControl : MonoBehaviour, IAnimalBehaviour
             GetCollision();
         }
     }
-    public void GetCollision()
+    public override void GetCollision()
     {
         CancelInvoke();
         isColli = true;

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class OysterControl : MonoBehaviour, IAnimalBehaviour
+public class OysterControl : AnimalBehaviour
 {
     [Title("Animation")]
     public SkeletonAnimation anim;

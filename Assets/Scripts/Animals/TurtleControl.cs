@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TurtleControl : MonoBehaviour, IAnimalBehaviour
+public class TurtleControl : AnimalBehaviour
 {
     public Collider2D Collider;
 
@@ -37,7 +37,7 @@ public class TurtleControl : MonoBehaviour, IAnimalBehaviour
         }
         else
         {
-            if (hit.collider.TryGetComponent<IAnimalBehaviour>(out IAnimalBehaviour animalBehaviour))
+            if (hit.collider.TryGetComponent<AnimalBehaviour>(out AnimalBehaviour animalBehaviour))
             {
                 animalBehaviour.GetCollision();
             }
