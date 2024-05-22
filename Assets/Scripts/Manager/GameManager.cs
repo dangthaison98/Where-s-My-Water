@@ -18,9 +18,11 @@ public class GameManager : MonoBehaviour
 
         Addressables.InstantiateAsync("Level " + currentlevel + ".1").Completed += InitLevel;
     }
-
+    private GameObject easyLevel;
     private void InitLevel(AsyncOperationHandle<GameObject> handle)
     {
+        easyLevel = handle.Result;
+
         UIManager.Instance.changeSceneAnimator.enabled = true;
     }
 
@@ -35,13 +37,13 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.changeSceneAnimator.gameObject.SetActive(true);
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         yield return new WaitForSeconds(0.75f);
+        Destroy(easyLevel);
         int currentlevel = DataManager.GetLevel() % maxLevel + 1;
         Addressables.InstantiateAsync("Level " + currentlevel + ".2").Completed += InitHardLevel;
     }
     private void InitHardLevel(AsyncOperationHandle<GameObject> handle)
     {
-        UIManager.Instance.changeSceneAnimator.enabled = false;
-        UIManager.Instance.changeSceneAnimator.enabled = true;
+        UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
     }
     #endregion
 }
