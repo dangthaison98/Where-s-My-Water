@@ -72,9 +72,13 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseDrag()
     { 
-        if(countTimeTouch < 0.5f && Vector2.Distance(startPos, Camera.main.ScreenToWorldPoint(Input.mousePosition)) < 0.5f)
+        if(countTimeTouch < 0.5f)
         {
             countTimeTouch += Time.deltaTime;
+            if(Vector2.Distance(startPos, Camera.main.ScreenToWorldPoint(Input.mousePosition)) > 0.2f)
+            {
+                countTimeTouch = 1;
+            }
             return;
         }
 
@@ -165,7 +169,7 @@ public class AlligatorControl : MonoBehaviour
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         if (isUpdate)
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 50 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 20 * Time.deltaTime));
 
             LevelControl.Instance.mapGrid.ClearAllTiles();
             LevelControl.Instance.mapGrid.SetTile(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
