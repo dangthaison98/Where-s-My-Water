@@ -685,7 +685,7 @@ MonoBehaviour:
   fireworkEffect: {fileID: 2751568924453956213}
   baseCoin: 5
   gainCoinText: {fileID: 6737537546214122582}
-  bonusButton: {fileID: 6737537547353542704}
+  bonusButton: {fileID: 6737537546179478319}
   noThankButton: {fileID: 6737537547442878129}
   nextLevelButton: {fileID: 6737537546620848993}
   arrowReward: {fileID: 6737537547283965005}
