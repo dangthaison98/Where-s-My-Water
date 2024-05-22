@@ -16,11 +16,18 @@ public class GameManager : MonoBehaviour
 
         int currentlevel = DataManager.GetLevel() % maxLevel + 1;
 
-        Addressables.InstantiateAsync("Level " + currentlevel).Completed += InitLevel;
+        Addressables.InstantiateAsync("Level " + currentlevel + ".1").Completed += InitLevel;
     }
 
     private void InitLevel(AsyncOperationHandle<GameObject> handle)
     {
         UIManager.Instance.changeSceneAnimator.enabled = true;
+    }
+
+    [HideInInspector] public bool isHard;
+    public void SpawnHardLevel()
+    {
+        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
+        Addressables.InstantiateAsync("Level " + currentlevel + ".2").Completed += InitLevel;
     }
 }
