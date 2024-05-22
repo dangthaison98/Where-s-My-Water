@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TurtleControl : MonoBehaviour
+public class TurtleControl : MonoBehaviour, IAnimalBehaviour
 {
     public Collider2D Collider;
 

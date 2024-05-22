@@ -7,7 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AlligatorControl : MonoBehaviour
+public class AlligatorControl : MonoBehaviour, IAnimalBehaviour
 {
     [Title("Data")]
     [Range(0, 9)]
@@ -97,7 +97,8 @@ public class AlligatorControl : MonoBehaviour
             CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(startPosOfCheckPoint)), false);
         }
 
-        if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
+        RaycastHit2D hit = Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal"));
+        if (!hit)
         {
             capsuleCollider.enabled = false;
 
@@ -114,6 +115,13 @@ public class AlligatorControl : MonoBehaviour
 
             StartCoroutine(RunOut());
             return;
+        }
+        else
+        {
+            if (hit.collider.TryGetComponent<IAnimalBehaviour>(out IAnimalBehaviour animalBehaviour))
+            {
+                animalBehaviour.GetCollision();
+            }
         }
         ////////////////////////////////////////////////
         ReturnIdle();
@@ -144,15 +152,19 @@ public class AlligatorControl : MonoBehaviour
     {
         if (gameObject.layer == 3 && !isColli)
         {
-            isColli = true;
-            bodyRenderer.sprite = redBody;
-            headAnim.AnimationName = "run4";
-            tailAnim.AnimationName = "run4";
-
-            SoundManager.instance.PlayAlligatorColliSound();
-
-            Invoke(nameof(ReturnIdle), 0.5f);
+            IAnimalBehaviour();
         }
+    }
+    void IAnimalBehaviour()
+    {
+        isColli = true;
+        bodyRenderer.sprite = redBody;
+        headAnim.AnimationName = "run4";
+        tailAnim.AnimationName = "run4";
+
+        SoundManager.instance.PlayAlligatorColliSound();
+
+        Invoke(nameof(ReturnIdle), 0.5f);
     }
     void ReturnIdle()
     {
