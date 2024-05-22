@@ -21,8 +21,7 @@ public class FishControl : AnimalBehaviour
 
     private void OnMouseDown()
     {
-        fish1.layer = 0;
-        fish2.layer = 0;
+        gameObject.layer = 0;
 
         RaycastHit2D hit = Physics2D.Raycast(fish1.transform.position, transform.right, Vector2.Distance(fish1.transform.position, fish2.transform.position), LayerMask.GetMask("Animal"));
         if (!hit)
@@ -47,8 +46,7 @@ public class FishControl : AnimalBehaviour
     }
     private void OnMouseUp()
     {
-        fish1.layer = 3;
-        fish2.layer = 3;
+        gameObject.layer = 3;
     }
 
     IEnumerator RunOut()
