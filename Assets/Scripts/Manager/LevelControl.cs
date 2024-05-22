@@ -31,7 +31,7 @@ public class LevelControl : MonoBehaviour
         else
             Camera.main.orthographicSize = cameraSize;
 
-        Camera.main.transform.position = new Vector3(0, cameraYPos, 0);
+        Camera.main.transform.position = new Vector3(0, cameraYPos, -10);
     }
 
     public void CheckCompleteLevel()
