@@ -86,7 +86,7 @@ public class AlligatorControl : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        CaculatePosition(LevelControl.Instance.mapGrid.CellToWorld(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position)), false);
+        CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position)), false);
 
         if (!Physics2D.Raycast(checkPoint.position, transform.right, 10, LayerMask.GetMask("Animal")))
         {
@@ -171,14 +171,14 @@ public class AlligatorControl : MonoBehaviour
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotZ, 20 * Time.deltaTime));
 
-            LevelControl.Instance.mapGrid.ClearAllTiles();
-            LevelControl.Instance.mapGrid.SetTile(LevelControl.Instance.mapGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
+            LevelControl.Instance.choiceGrid.ClearAllTiles();
+            LevelControl.Instance.choiceGrid.SetTile(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position), LevelControl.Instance.choiceTile);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-            LevelControl.Instance.mapGrid.ClearAllTiles();
+            LevelControl.Instance.choiceGrid.ClearAllTiles();
         }
 
         

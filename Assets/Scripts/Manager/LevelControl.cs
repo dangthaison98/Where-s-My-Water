@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -9,7 +10,8 @@ public class LevelControl : MonoBehaviour
 {
     public static LevelControl Instance;
 
-    public Tilemap mapGrid;
+    public Tilemap groundGrid;
+    public Tilemap choiceGrid;
     public TileBase choiceTile;
 
     public float cameraSize = 7.5f;
