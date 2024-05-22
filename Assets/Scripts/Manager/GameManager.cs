@@ -14,22 +14,29 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
+        SpawnEasyLevel();
+    }
 
+    #region SpawnEasyLevel
+    private GameObject easyLevel;
+    private void SpawnEasyLevel()
+    {
+        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
         Addressables.InstantiateAsync("Level " + currentlevel + ".1").Completed += InitLevel;
     }
-    private GameObject easyLevel;
     private void InitLevel(AsyncOperationHandle<GameObject> handle)
     {
         easyLevel = handle.Result;
 
         UIManager.Instance.changeSceneAnimator.enabled = true;
     }
+    #endregion
 
     #region SpawnHardLevel
     [HideInInspector] public bool isHard;
     public void ActiveSpawnHardLevel()
     {
+        isHard = true;
         StartCoroutine(SpawnHardLevel());
     }
     IEnumerator SpawnHardLevel()
