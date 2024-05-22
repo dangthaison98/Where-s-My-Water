@@ -24,10 +24,24 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.changeSceneAnimator.enabled = true;
     }
 
+    #region SpawnHardLevel
     [HideInInspector] public bool isHard;
-    public void SpawnHardLevel()
+    public void ActiveSpawnHardLevel()
     {
-        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
-        Addressables.InstantiateAsync("Level " + currentlevel + ".2").Completed += InitLevel;
+        StartCoroutine(SpawnHardLevel());
     }
+    IEnumerator SpawnHardLevel()
+    {
+        UIManager.Instance.changeSceneAnimator.gameObject.SetActive(true);
+        UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
+        yield return new WaitForSeconds(0.75f);
+        int currentlevel = DataManager.GetLevel() % maxLevel + 1;
+        Addressables.InstantiateAsync("Level " + currentlevel + ".2").Completed += InitHardLevel;
+    }
+    private void InitHardLevel(AsyncOperationHandle<GameObject> handle)
+    {
+        UIManager.Instance.changeSceneAnimator.enabled = false;
+        UIManager.Instance.changeSceneAnimator.enabled = true;
+    }
+    #endregion
 }

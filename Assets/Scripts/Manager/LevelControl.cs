@@ -47,7 +47,7 @@ public class LevelControl : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.SpawnHardLevel();
+                GameManager.Instance.ActiveSpawnHardLevel();
             }
         }
     }
