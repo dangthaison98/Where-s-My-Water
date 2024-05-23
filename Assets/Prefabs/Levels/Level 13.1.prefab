@@ -76,6 +76,7 @@ MonoBehaviour:
   cameraYPos: -1.5
   cameraSize: 7.5
   animalCount: 0
+  animalChoice: {fileID: 0}
 --- !u!1 &5573304810414508740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581954641849638677, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_Name
-      value: Turtle
+      value: Turtle (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5977465321835265580, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1307,7 +1308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581954641849638677, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_Name
-      value: Turtle (2)
+      value: Turtle (7)
       objectReference: {fileID: 0}
     - target: {fileID: 5977465321835265580, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1483,7 +1484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581954641849638677, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_Name
-      value: Turtle (1)
+      value: Turtle (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5977465321835265580, guid: c2651458e3605154f8af601af515a378, type: 3}
       propertyPath: m_LocalPosition.x
