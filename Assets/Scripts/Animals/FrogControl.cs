@@ -82,7 +82,7 @@ public class FrogControl : AnimalBehaviour
 
         while (transform.position != newPos)
         {
-            transform.position = Vector2.MoveTowards(transform.position, newPos, 5 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, newPos, 10 * Time.deltaTime);
             yield return null;
         }
         anim.AnimationName = "frog 1";
