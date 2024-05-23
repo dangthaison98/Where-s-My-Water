@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 public class FrogControl : AnimalBehaviour
 {
     public Collider2D Collider;
+    public MeshRenderer meshRenderer;
 
     [Title("Animation")]
     public SkeletonAnimation anim;
@@ -76,7 +77,8 @@ public class FrogControl : AnimalBehaviour
 
         anim.AnimationName = "frog 4";
         Collider.enabled = false;
-        
+        meshRenderer.sortingOrder = 4;
+
 
         while (transform.position != newPos)
         {
@@ -85,6 +87,7 @@ public class FrogControl : AnimalBehaviour
         }
         anim.AnimationName = "frog 1";
         Collider.enabled = true;
+        meshRenderer.sortingOrder = 2;
     }
     public override void CancelMoveAnimal()
     {

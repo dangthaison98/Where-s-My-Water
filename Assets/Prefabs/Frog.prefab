@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 2212150398665938121}
+  meshRenderer: {fileID: 7855652099626397877}
   anim: {fileID: 5854179648405329873}
 --- !u!58 &2212150398665938121
 CircleCollider2D:
