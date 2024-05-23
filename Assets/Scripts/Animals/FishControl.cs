@@ -63,6 +63,7 @@ public class FishControl : AnimalBehaviour
         yield return new WaitForSeconds(0.5f);
         fish1.SetActive(false);
         fish2.SetActive(false);
+        healthEffect.transform.position = (fish1.transform.position + fish2.transform.position)/2;
         healthEffect.SetActive(true);
         yield return new WaitForSeconds(1.25f);
         LevelControl.Instance.CheckCompleteLevel();
