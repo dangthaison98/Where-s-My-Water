@@ -1,0 +1,9 @@
+fx ca.png
+size:112,60
+filter:Linear,Linear
+pma:true
+Tim 2
+bounds:76,15,43,34
+rotate:90
+tim
+bounds:2,2,72,56
