@@ -15,6 +15,20 @@ public class OysterControl : AnimalBehaviour
         anim.timeScale = Random.Range(0.8f, 1.2f);
     }
 
+    public override void GetCollision()
+    {
+        CancelInvoke();
+        anim.AnimationName = "so2";
+
+        SoundManager.instance.PlayAlligatorColliSound();
+
+        Invoke(nameof(ReturnIdle), 0.25f);
+    }
+    void ReturnIdle()
+    {
+        anim.AnimationName = "so1";
+    }
+
 #if UNITY_EDITOR
     private Tilemap tilemap;
 
