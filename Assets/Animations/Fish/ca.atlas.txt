@@ -1,37 +1,50 @@
 ca.png
-size:205,255
+size:165,522
 filter:Linear,Linear
 pma:true
 long mi
-bounds:2,2,37,35
+bounds:44,42,37,35
 offsets:1,1,39,37
 ma hong
-bounds:114,84,76,59
+bounds:2,79,76,59
 offsets:8,6,89,67
 mat den
-bounds:123,9,14,15
+bounds:28,7,14,15
 offsets:2,2,17,18
 mat trang
-bounds:176,30,24,24
+bounds:44,16,24,24
 offsets:1,2,26,27
 mieng hun 1
-bounds:176,56,27,26
+bounds:80,112,27,26
 mieng hun 2
-bounds:97,4,24,20
+bounds:2,2,24,20
 nham mat
-bounds:74,6,31,21
+bounds:80,79,31,21
 offsets:0,0,31,22
 rotate:90
 than
-bounds:2,145,190,108
+bounds:2,330,190,108
+rotate:90
+than copy do
+bounds:2,140,188,106
+rotate:90
 tim
-bounds:102,26,72,56
+bounds:103,24,72,56
+rotate:90
 vay duoi
-bounds:2,39,98,53
+bounds:110,198,98,53
 offsets:1,1,100,55
+rotate:90
+vay duoi1 copy do
+bounds:110,98,98,53
+rotate:90
 vay nho
-bounds:41,6,31,31
+bounds:2,46,31,31
 offsets:1,1,33,33
 vay tren
-bounds:2,94,110,49
+bounds:112,298,110,49
 offsets:1,1,112,51
+rotate:90
+vay tren copy do
+bounds:112,410,110,49
+rotate:90
