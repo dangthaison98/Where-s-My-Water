@@ -76,7 +76,7 @@ public class FrogControl : AnimalBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
         anim.AnimationName = "frog 4";
-        Collider.enabled = false;
+        Collider.isTrigger = true;
         meshRenderer.sortingOrder = 4;
 
 
@@ -86,7 +86,7 @@ public class FrogControl : AnimalBehaviour
             yield return null;
         }
         anim.AnimationName = "frog 1";
-        Collider.enabled = true;
+        Collider.isTrigger = false;
         meshRenderer.sortingOrder = 2;
     }
     public override void CancelMoveAnimal()
