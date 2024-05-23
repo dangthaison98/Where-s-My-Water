@@ -15,3 +15,6 @@ MonoBehaviour:
   alligatorColli: {fileID: 8300000, guid: 5579d09d263f1a945bdc1f9e3827455c, type: 3}
   alligatorRun: {fileID: 8300000, guid: 1b9ae38c8f6bce84285d62aaa93bc34f, type: 3}
   frogJump: {fileID: 8300000, guid: 3c71b6192cd62264f9f5464fae84be6e, type: 3}
+  buttonSound: {fileID: 8300000, guid: 7749b4ba8cd74f94f89b7633eb145ff2, type: 3}
+  winSound: {fileID: 8300000, guid: 9478985f0d7f6a44a8ea0f4cdd1d7b82, type: 3}
+  fireworkSound: {fileID: 8300000, guid: b45a20343cbb9f742837378cd60d759a, type: 3}

@@ -46,8 +46,11 @@ public class UIManager : MonoBehaviour
     IEnumerator PlayCompleteLevel()
     {
         fireworkEffect.SetActive(true);
+        SoundManager.instance.PlayFireworkSound();
         yield return new WaitForSeconds(1.5f);
+        SoundManager.instance.PlayWinSound();
         completePanel.SetActive(true);
+        DataManager.EarnCoin(baseCoin);
     }
 
     #region Button

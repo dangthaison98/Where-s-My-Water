@@ -42,6 +42,18 @@ public class SoundManager : MonoBehaviour
     {
         PlayOneShot(audioDatas.frogJump);
     }
+    public void PlayWinSound()
+    {
+        PlayOneShot(audioDatas.winSound);
+    }
+    public void PlayButtonSound()
+    {
+        PlayOneShot(audioDatas.buttonSound);
+    }
+    public void PlayFireworkSound()
+    {
+        PlayOneShot(audioDatas.fireworkSound);
+    }
 
 
 
