@@ -6,5 +6,6 @@ public class AnimalBehaviour: MonoBehaviour
 {
     public virtual void GetCollision() { }
 
-    public virtual void MoveAnimal() { }
+    public virtual void MoveAnimal(Vector2 newPos) { }
+    public virtual void CancelMoveAnimal() { }
 }

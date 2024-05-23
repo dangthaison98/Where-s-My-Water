@@ -42,11 +42,16 @@ public class LevelControl : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (choiceGrid.HasTile(choiceGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition))))
+            Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (choiceGrid.HasTile(choiceGrid.WorldToCell(clickPos)))
             {
-                animalChoice.MoveAnimal();
-                animalChoice = null;
+                animalChoice.MoveAnimal(choiceGrid.CellToWorld(choiceGrid.WorldToCell(clickPos)));
             }
+            else
+            {
+                animalChoice.CancelMoveAnimal();
+            }
+            animalChoice = null;
         }
     }
 
