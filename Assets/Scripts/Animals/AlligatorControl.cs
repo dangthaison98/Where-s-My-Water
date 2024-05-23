@@ -118,9 +118,12 @@ public class AlligatorControl : AnimalBehaviour
         }
         else
         {
-            if (hit.collider.TryGetComponent<AnimalBehaviour>(out AnimalBehaviour animalBehaviour))
+            if (countTimeTouch < 0.5f)
             {
-                animalBehaviour.GetCollision();
+                if (hit.collider.TryGetComponent<AnimalBehaviour>(out AnimalBehaviour animalBehaviour))
+                {
+                    animalBehaviour.GetCollision();
+                }
             }
         }
         ////////////////////////////////////////////////
