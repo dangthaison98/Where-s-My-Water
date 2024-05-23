@@ -1,0 +1,18 @@
+cay dua.png
+size:481,293
+filter:Linear,Linear
+pma:true
+bong do
+bounds:343,143,136,148
+offsets:2,2,139,151
+la 1
+bounds:144,2,161,196
+offsets:1,2,163,199
+rotate:90
+la 2
+bounds:2,40,140,251
+la 3
+bounds:144,165,126,197
+rotate:90
+than
+bounds:342,23,127,118
