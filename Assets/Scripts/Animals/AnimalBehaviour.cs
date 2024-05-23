@@ -5,4 +5,6 @@ using UnityEngine;
 public class AnimalBehaviour: MonoBehaviour
 {
     public virtual void GetCollision() { }
+
+    public virtual void MoveAnimal() { }
 }

@@ -19,6 +19,8 @@ public class LevelControl : MonoBehaviour
 
     [HideInInspector] public int animalCount;
 
+    public AnimalBehaviour animalChoice;
+
     private void Awake()
     {
         Instance = this;
@@ -32,6 +34,20 @@ public class LevelControl : MonoBehaviour
             Camera.main.orthographicSize = cameraSize;
 
         Camera.main.transform.position = new Vector3(0, cameraYPos, -10);
+    }
+
+    private void Update()
+    {
+        if (animalChoice == null) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (choiceGrid.HasTile(choiceGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition))))
+            {
+                animalChoice.MoveAnimal();
+                animalChoice = null;
+            }
+        }
     }
 
     public void CheckCompleteLevel()

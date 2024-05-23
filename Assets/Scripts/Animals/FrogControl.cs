@@ -30,6 +30,14 @@ public class FrogControl : AnimalBehaviour
                 LevelControl.Instance.choiceGrid.SetTile(aroundPos[i], LevelControl.Instance.choiceTile);
             }
         }
+
+        LevelControl.Instance.animalChoice = this;
+    }
+
+    public override void MoveAnimal()
+    {
+        LevelControl.Instance.choiceGrid.ClearAllTiles();
+        anim.AnimationName = "frog 1";
     }
 
 
