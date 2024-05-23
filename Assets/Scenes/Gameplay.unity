@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de80735c9e476041b185a8de09308f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLevel: 30
+  maxLevel: 28
   isHard: 0
 --- !u!1 &385716237
 GameObject:
