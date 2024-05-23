@@ -19,7 +19,7 @@ public class LevelControl : MonoBehaviour
 
     [HideInInspector] public int animalCount;
 
-    public AnimalBehaviour animalChoice;
+    [HideInInspector] public AnimalBehaviour animalChoice;
 
     private void Awake()
     {
