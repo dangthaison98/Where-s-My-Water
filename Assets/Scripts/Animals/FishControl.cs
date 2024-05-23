@@ -13,6 +13,7 @@ public class FishControl : AnimalBehaviour
     public GameObject fish2;
     public SkeletonAnimation anim2;
     public Collider2D collider2;
+    public GameObject healthEffect;
 
     private void Start()
     {
@@ -53,13 +54,17 @@ public class FishControl : AnimalBehaviour
     {
         while (Vector2.Distance(fish1.transform.position, fish2.transform.position) > 1.25f)
         {
-            fish1.transform.position += fish1.transform.right * 2 * Time.deltaTime;
-            fish2.transform.position += fish2.transform.right * -2 * Time.deltaTime;
+            fish1.transform.position += fish1.transform.right * 5 * Time.deltaTime;
+            fish2.transform.position += fish2.transform.right * -5 * Time.deltaTime;
             yield return null;
         }
         anim1.AnimationName = "fish 3";
         anim2.AnimationName = "fish 3";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        fish1.SetActive(false);
+        fish2.SetActive(false);
+        healthEffect.SetActive(true);
+        yield return new WaitForSeconds(1.25f);
         LevelControl.Instance.CheckCompleteLevel();
         Destroy(gameObject);
     }
