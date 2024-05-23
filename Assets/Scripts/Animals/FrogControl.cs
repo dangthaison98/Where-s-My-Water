@@ -1,7 +1,5 @@
 using Sirenix.OdinInspector;
 using Spine.Unity;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -27,7 +25,7 @@ public class FrogControl : AnimalBehaviour
         LevelControl.Instance.choiceGrid.ClearAllTiles();
         for (int i = 0; i < aroundPos.Length; i++)
         {
-            if (LevelControl.Instance.groundGrid.HasTile(aroundPos[i]))
+            if (LevelControl.Instance.groundGrid.HasTile(aroundPos[i]) && !Physics2D.CircleCast(new Vector2(aroundPos[i].x, aroundPos[i].y), 0.4f, Vector2.zero, 0, LayerMask.GetMask("Animal")))
             {
                 LevelControl.Instance.choiceGrid.SetTile(aroundPos[i], LevelControl.Instance.choiceTile);
             }
