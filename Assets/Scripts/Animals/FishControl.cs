@@ -72,6 +72,24 @@ public class FishControl : AnimalBehaviour
 
 
 
+    public override void GetCollision()
+    {
+        CancelInvoke();
+        anim1.AnimationName = "fish 4";
+        anim2.AnimationName = "fish 4";
+
+        SoundManager.instance.PlayAlligatorColliSound();
+
+        Invoke(nameof(ReturnIdle), 0.25f);
+    }
+    void ReturnIdle()
+    {
+        anim1.AnimationName = "fish 1";
+        anim2.AnimationName = "fish 1";
+    }
+
+
+
 #if UNITY_EDITOR
     [Title("Editor"), Space(100)]
     private Tilemap tilemap;
