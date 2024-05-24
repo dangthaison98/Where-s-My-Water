@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -53,6 +54,17 @@ public class GameManager : MonoBehaviour
         easyLevel = handle.Result;
 
         UIManager.Instance.changeSceneAnimator.enabled = true;
+
+        UIManager.Instance.animalCountHook = FindObjectsByType<AlligatorControl>(FindObjectsSortMode.None).Length + FindObjectsByType<TurtleControl>(FindObjectsSortMode.None).Length;
+        if(UIManager.Instance.animalCountHook <= 0)
+        {
+            UIManager.Instance.itemButtons[0].GetComponent<Button>().interactable = false;
+        }
+        UIManager.Instance.animalCountHammer = FindObjectsByType<OysterControl>(FindObjectsSortMode.None).Length + FindObjectsByType<FrogControl>(FindObjectsSortMode.None).Length;
+        if (UIManager.Instance.animalCountHammer <= 0)
+        {
+            UIManager.Instance.itemButtons[1].GetComponent<Button>().interactable = false;
+        }
     }
     #endregion
 
@@ -79,6 +91,26 @@ public class GameManager : MonoBehaviour
     }
     private void InitHardLevel(AsyncOperationHandle<GameObject> handle)
     {
+        UIManager.Instance.animalCountHook = FindObjectsByType<AlligatorControl>(FindObjectsSortMode.None).Length + FindObjectsByType<TurtleControl>(FindObjectsSortMode.None).Length;
+        if (UIManager.Instance.animalCountHook <= 0)
+        {
+            UIManager.Instance.itemButtons[0].GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            UIManager.Instance.itemButtons[0].GetComponent<Button>().interactable = true;
+        }
+        UIManager.Instance.animalCountHammer = FindObjectsByType<OysterControl>(FindObjectsSortMode.None).Length + FindObjectsByType<FrogControl>(FindObjectsSortMode.None).Length;
+        if (UIManager.Instance.animalCountHammer <= 0)
+        {
+            UIManager.Instance.itemButtons[1].GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            UIManager.Instance.itemButtons[1].GetComponent<Button>().interactable = true;
+        }
+
+
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         Invoke(nameof(PlayHardLevelSound), 0.5f);
     }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class UIManager : MonoBehaviour
     #region Item
     [HideInInspector] public bool isUseHook;
     [HideInInspector] public bool isUseHammer;
-    private int animalCountHook;
+    [HideInInspector] public int animalCountHook;
     public void ChoiceHook()
     {
         if (isUseHook)
@@ -86,6 +87,15 @@ public class UIManager : MonoBehaviour
         itemTuto.transform.parent.gameObject.SetActive(false);
 
         animalCountHook--;
+
+        if (UIManager.Instance.animalCountHook <= 0)
+        {
+            UIManager.Instance.itemButtons[0].GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            UIManager.Instance.itemButtons[0].GetComponent<Button>().interactable = true;
+        }
     }
 
     public void ChoiceHammer()
@@ -113,7 +123,7 @@ public class UIManager : MonoBehaviour
             itemTuto.transform.parent.gameObject.SetActive(true);
         }
     }
-    private int animalCountHammer;
+    [HideInInspector] public int animalCountHammer;
     public void UseHammer()
     {
         isUseHammer = false;
@@ -125,6 +135,15 @@ public class UIManager : MonoBehaviour
         itemTuto.transform.parent.gameObject.SetActive(false);
 
         animalCountHammer--;
+
+        if (UIManager.Instance.animalCountHammer <= 0)
+        {
+            UIManager.Instance.itemButtons[1].GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            UIManager.Instance.itemButtons[1].GetComponent<Button>().interactable = true;
+        }
     }
     #endregion
 
