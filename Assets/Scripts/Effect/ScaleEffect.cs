@@ -6,10 +6,19 @@ using UnityEngine;
 public class ScaleEffect : MonoBehaviour
 {
     public bool playOnAwake = true;
+    public bool isReturnStartScale;
+    Vector3 startScale;
 
     [SerializeField] TweenSettings<float> scaleSettings;
     Tween currentTween;
 
+    private void Awake()
+    {
+        if(isReturnStartScale)
+        {
+            startScale = transform.localScale;
+        }    
+    }
 
     public void Play()
     {
@@ -23,6 +32,10 @@ public class ScaleEffect : MonoBehaviour
 
     private void OnEnable()
     {
+        if (isReturnStartScale)
+        {
+            transform.localScale = startScale;
+        }
         if (playOnAwake)
         {
             Play();

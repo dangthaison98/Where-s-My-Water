@@ -1,0 +1,19 @@
+warning.png
+size:1506,316
+filter:Linear,Linear
+pma:true
+DIFFICULTY  SPIKE
+bounds:754,2,750,95
+offsets:1,1,752,97
+DIFFICULTY  SPIKE copy
+bounds:2,2,750,95
+Layer 134
+bounds:1375,204,124,110
+offsets:1,1,126,112
+Rectangle 1 copy 2
+bounds:2,99,1099,215
+offsets:2,1,1103,217
+Shape 1
+bounds:1239,159,134,155
+Shape 1 copy
+bounds:1103,159,134,155
