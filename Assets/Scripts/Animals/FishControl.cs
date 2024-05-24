@@ -65,6 +65,7 @@ public class FishControl : AnimalBehaviour
         fish2.SetActive(false);
         healthEffect.transform.position = (fish1.transform.position + fish2.transform.position)/2;
         healthEffect.SetActive(true);
+        SoundManager.instance.PlayKissSound();
         yield return new WaitForSeconds(1.25f);
         LevelControl.Instance.CheckCompleteLevel();
         Destroy(gameObject);

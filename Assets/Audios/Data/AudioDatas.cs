@@ -11,5 +11,7 @@ public class AudioDatas : ScriptableObject
     public AudioClip buttonSound;
     public AudioClip winSound;
     public AudioClip fireworkSound;
+    public AudioClip warningSound;
+    public AudioClip kissSound;
 }
 

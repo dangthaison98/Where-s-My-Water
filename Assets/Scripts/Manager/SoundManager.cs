@@ -54,6 +54,14 @@ public class SoundManager : MonoBehaviour
     {
         PlayOneShot(audioDatas.fireworkSound);
     }
+    public void PlayWarningSound()
+    {
+        PlayOneShot(audioDatas.warningSound);
+    }
+    public void PlayKissSound()
+    {
+        PlayOneShot(audioDatas.kissSound);
+    }
 
 
 
