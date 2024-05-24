@@ -15,13 +15,13 @@ public class HookControl : MonoBehaviour
     {
         while(transform.position != target.transform.position)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 10 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 8 * Time.deltaTime);
             yield return null;
         }
         target.transform.parent = transform;
         while (transform.position != startPos)
         {
-            transform.position = Vector2.MoveTowards(transform.position, startPos, 10 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, startPos, 8 * Time.deltaTime);
             yield return null;
         }
         Destroy(target);
