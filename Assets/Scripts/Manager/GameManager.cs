@@ -20,9 +20,20 @@ public class GameManager : MonoBehaviour
         SpawnEasyLevel();
     }
 
-    public void SpawnHammer()
+    public void SpawnHammer(GameObject animal)
+    {
+        UIManager.Instance.UseHammer();
+        PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
+        StartCoroutine(DestroyAnimal(animal, 1.5f));
+    }
+    public void SpawnHook(Vector2 pos)
     {
 
+    }
+    IEnumerator DestroyAnimal(GameObject animal, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(animal);
     }
 
     #region SpawnEasyLevel

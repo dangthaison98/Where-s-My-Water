@@ -93,9 +93,22 @@ public class UIManager : MonoBehaviour
             }
             itemButtons[1].SetActive(true);
             mainUi.SetActive(false);
-            itemTuto.text = "Crack clams and crabs";
+            itemTuto.text = "Crack clams, frogs and crabs";
             itemTuto.transform.parent.gameObject.SetActive(true);
         }
+    }
+    private int animalCountHammer;
+    public void UseHammer()
+    {
+        isUseHammer = false;
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].SetActive(true);
+        }
+        mainUi.SetActive(true);
+        itemTuto.transform.parent.gameObject.SetActive(false);
+
+        animalCountHammer--;
     }
     #endregion
 

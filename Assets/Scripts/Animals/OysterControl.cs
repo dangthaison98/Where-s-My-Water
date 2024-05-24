@@ -15,6 +15,14 @@ public class OysterControl : AnimalBehaviour
         anim.timeScale = Random.Range(0.8f, 1.2f);
     }
 
+    private void OnMouseDown()
+    {
+        if(UIManager.Instance.isUseHammer)
+        {
+            GameManager.Instance.SpawnHammer(gameObject);
+        }
+    }
+
     public override void GetCollision()
     {
         CancelInvoke();

@@ -1125,8 +1125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 35
-  hook: {fileID: 0}
-  hammer: {fileID: 0}
+  hook: {fileID: 8039382125763154159, guid: 1610086318cdbf344872b5e4dba219ac, type: 3}
+  hammer: {fileID: 8483995704386524868, guid: d1431e2defebe42448135c2bcc657839, type: 3}
   isHard: 0
 --- !u!1 &385716237
 GameObject:

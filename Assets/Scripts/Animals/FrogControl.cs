@@ -12,8 +12,18 @@ public class FrogControl : AnimalBehaviour
     [Title("Animation")]
     public SkeletonAnimation anim;
 
+    private void OnMouseDown()
+    {
+        if (UIManager.Instance.isUseHammer)
+        {
+            GameManager.Instance.SpawnHammer(gameObject);
+            Collider.enabled = false;
+        }
+    }
     private void OnMouseUp()
     {
+        if (!Collider.enabled) return;
+
         Vector3Int currentPos = LevelControl.Instance.choiceGrid.WorldToCell(transform.position);
 
         Vector3Int[] aroundPos = new Vector3Int[6];
