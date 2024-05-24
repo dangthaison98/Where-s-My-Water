@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     [Title("Main UI")]
     public TextMeshProUGUI levelText;
 
+    [Title("Item")]
+    public GameObject[] itemButtons;
+
     [Title("Panel")]
     public GameObject completePanel;
 
@@ -47,10 +50,19 @@ public class UIManager : MonoBehaviour
         if (isUseHook)
         {
             isUseHook = false;
+            for (int i = 0; i < itemButtons.Length; i++)
+            {
+                itemButtons[i].SetActive(true);
+            }
         }
         else
         {
             isUseHook = true;
+            for (int i = 0; i < itemButtons.Length; i++)
+            {
+                itemButtons[i].SetActive(false);
+            }
+            itemButtons[0].SetActive(true);
         }
     }
     public void UseHammer()
@@ -58,10 +70,19 @@ public class UIManager : MonoBehaviour
         if (isUseHammer)
         {
             isUseHammer = false;
+            for (int i = 0; i < itemButtons.Length; i++)
+            {
+                itemButtons[i].SetActive(true);
+            }
         }
         else
         {
             isUseHammer = true;
+            for (int i = 0; i < itemButtons.Length; i++)
+            {
+                itemButtons[i].SetActive(false);
+            }
+            itemButtons[1].SetActive(true);
         }
     }
     #endregion

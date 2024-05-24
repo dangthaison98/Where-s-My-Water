@@ -777,6 +777,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelText: {fileID: 1107732506}
+  itemButtons:
+  - {fileID: 199865572}
+  - {fileID: 1495372449}
+  - {fileID: 895290608}
   completePanel: {fileID: 6737537547106773034}
   fireworkEffect: {fileID: 2751568924453956213}
   baseCoin: 5
