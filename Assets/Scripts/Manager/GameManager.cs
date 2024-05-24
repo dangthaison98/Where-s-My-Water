@@ -80,11 +80,11 @@ public class GameManager : MonoBehaviour
     private void InitHardLevel(AsyncOperationHandle<GameObject> handle)
     {
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
-        UIManager.Instance.hardLevelWarning.SetActive(true);
         Invoke(nameof(PlayHardLevelSound), 0.5f);
     }
     void PlayHardLevelSound()
     {
+        UIManager.Instance.hardLevelWarning.SetActive(true);
         SoundManager.instance.PlayWarningSound();
     }
     #endregion
