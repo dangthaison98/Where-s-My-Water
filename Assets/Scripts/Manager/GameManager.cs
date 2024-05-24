@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     public void SpawnHammer(GameObject animal)
     {
         UIManager.Instance.UseHammer();
-        PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
-        StartCoroutine(DestroyAnimal(animal, 1.5f));
+        var hammerControl =  PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
+        StartCoroutine(DestroyAnimal(animal, 1.5f, hammerControl));
     }
     public void SpawnHook(GameObject animal)
     {
@@ -36,10 +36,12 @@ public class GameManager : MonoBehaviour
         hookControl.startPos = startPos;
         hookControl.ActiveCatchAnimal();
     }
-    IEnumerator DestroyAnimal(GameObject animal, float time)
+    IEnumerator DestroyAnimal(GameObject animal, float time, GameObject hammer)
     {
         yield return new WaitForSeconds(time);
         Destroy(animal);
+        yield return new WaitForSeconds(1);
+        PoolManager.Despawn("Hammer", hammer);
     }
 
     #region SpawnEasyLevel
