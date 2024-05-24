@@ -18,3 +18,5 @@ MonoBehaviour:
   buttonSound: {fileID: 8300000, guid: 7749b4ba8cd74f94f89b7633eb145ff2, type: 3}
   winSound: {fileID: 8300000, guid: 9478985f0d7f6a44a8ea0f4cdd1d7b82, type: 3}
   fireworkSound: {fileID: 8300000, guid: b45a20343cbb9f742837378cd60d759a, type: 3}
+  warningSound: {fileID: 8300000, guid: 9ebf7ea05e5fbc440bde76e75aa392b2, type: 3}
+  kissSound: {fileID: 8300000, guid: 3c08cc7bbf76a5e4eb3220a340cfe045, type: 3}
