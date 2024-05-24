@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     #region Item
     [HideInInspector] public bool isUseHook;
     [HideInInspector] public bool isUseHammer;
-    public void UseHook()
+    public void ChoiceHook()
     {
         if (isUseHook)
         {
@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour
             {
                 itemButtons[i].SetActive(true);
             }
+            mainUi.SetActive(true);
         }
         else
         {
@@ -65,9 +66,10 @@ public class UIManager : MonoBehaviour
                 itemButtons[i].SetActive(false);
             }
             itemButtons[0].SetActive(true);
+            mainUi.SetActive(false);
         }
     }
-    public void UseHammer()
+    public void ChoiceHammer()
     {
         if (isUseHammer)
         {
@@ -76,6 +78,7 @@ public class UIManager : MonoBehaviour
             {
                 itemButtons[i].SetActive(true);
             }
+            mainUi.SetActive(true);
         }
         else
         {
@@ -85,6 +88,7 @@ public class UIManager : MonoBehaviour
                 itemButtons[i].SetActive(false);
             }
             itemButtons[1].SetActive(true);
+            mainUi.SetActive(false);
         }
     }
     #endregion

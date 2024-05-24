@@ -1,0 +1,57 @@
+bua dap.png
+size:708,1054
+filter:Linear,Linear
+pma:true
+bua sang
+bounds:2,703,349,384
+offsets:4,5,357,393
+rotate:90
+dap
+bounds:354,265,326,319
+offsets:10,11,343,339
+duoi
+bounds:388,586,466,275
+offsets:5,12,479,293
+rotate:90
+lunglinh
+bounds:311,21,74,71
+offsets:9,12,92,94
+rotate:90
+nap duoi
+bounds:384,11,109,156
+offsets:1,1,111,158
+rotate:90
+nap tren
+bounds:542,11,109,156
+offsets:1,1,111,158
+rotate:90
+sao
+bounds:216,2,93,93
+offsets:4,5,103,103
+sao bua
+bounds:665,977,41,75
+set 1
+bounds:216,97,115,252
+offsets:5,8,124,267
+set 1 copy
+bounds:2,208,141,212
+offsets:7,5,154,227
+rotate:90
+set 1 copy 2
+bounds:2,67,139,212
+offsets:6,5,154,227
+rotate:90
+set 1 copy 3
+bounds:333,122,141,177
+offsets:3,6,147,192
+rotate:90
+tay
+bounds:2,17,48,156
+offsets:2,1,51,158
+rotate:90
+than
+bounds:512,122,171,141
+offsets:1,1,173,143
+vong sang 1
+bounds:2,351,350,350
+offsets:7,7,364,364
