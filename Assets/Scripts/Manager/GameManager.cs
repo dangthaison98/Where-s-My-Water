@@ -10,11 +10,19 @@ public class GameManager : MonoBehaviour
 
     public int maxLevel;
 
+    public GameObject hook;
+    public GameObject hammer;
+
     private void Awake()
     {
         Instance = this;
 
         SpawnEasyLevel();
+    }
+
+    public void SpawnHammer()
+    {
+
     }
 
     #region SpawnEasyLevel

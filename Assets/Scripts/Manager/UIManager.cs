@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviour
                 itemButtons[i].SetActive(true);
             }
             mainUi.SetActive(true);
+            itemTuto.transform.parent.gameObject.SetActive(false);
         }
         else
         {
@@ -67,6 +68,8 @@ public class UIManager : MonoBehaviour
             }
             itemButtons[0].SetActive(true);
             mainUi.SetActive(false);
+            itemTuto.text = "Catch alligators or turtles";
+            itemTuto.transform.parent.gameObject.SetActive(true);
         }
     }
     public void ChoiceHammer()
@@ -79,6 +82,7 @@ public class UIManager : MonoBehaviour
                 itemButtons[i].SetActive(true);
             }
             mainUi.SetActive(true);
+            itemTuto.transform.parent.gameObject.SetActive(false);
         }
         else
         {
@@ -89,6 +93,8 @@ public class UIManager : MonoBehaviour
             }
             itemButtons[1].SetActive(true);
             mainUi.SetActive(false);
+            itemTuto.text = "Crack clams and crabs";
+            itemTuto.transform.parent.gameObject.SetActive(true);
         }
     }
     #endregion
