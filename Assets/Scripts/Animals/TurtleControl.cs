@@ -27,6 +27,10 @@ public class TurtleControl : AnimalBehaviour
             Collider.enabled = false;
             return;
         }
+        else if (UIManager.Instance.isUseHammer)
+        {
+            UIManager.Instance.ChoiceHammer();
+        }
 
         gameObject.layer = 0;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal"));

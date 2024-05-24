@@ -22,6 +22,15 @@ public class FishControl : AnimalBehaviour
 
     private void OnMouseDown()
     {
+        if (UIManager.Instance.isUseHook)
+        {
+            UIManager.Instance.ChoiceHook();
+        }
+        else if (UIManager.Instance.isUseHammer)
+        {
+            UIManager.Instance.ChoiceHammer();
+        }
+
         gameObject.layer = 0;
 
         RaycastHit2D hit = Physics2D.Raycast(fish1.transform.position, fish1.transform.right, Vector2.Distance(fish1.transform.position, fish2.transform.position), LayerMask.GetMask("Animal"));

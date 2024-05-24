@@ -69,6 +69,10 @@ public class AlligatorControl : AnimalBehaviour
             tailAnim.timeScale = 2;
             return;
         }
+        else if (UIManager.Instance.isUseHammer)
+        {
+            UIManager.Instance.ChoiceHammer();
+        }
 
         gameObject.layer = 0;
         rb.constraints = RigidbodyConstraints2D.FreezePosition;

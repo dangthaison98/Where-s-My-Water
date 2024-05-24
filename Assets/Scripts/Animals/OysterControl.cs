@@ -21,6 +21,10 @@ public class OysterControl : AnimalBehaviour
         {
             GameManager.Instance.SpawnHammer(gameObject);
         }
+        else if (UIManager.Instance.isUseHook)
+        {
+            UIManager.Instance.ChoiceHook();
+        }
     }
 
     public override void GetCollision()

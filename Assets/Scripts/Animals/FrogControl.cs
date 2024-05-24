@@ -19,6 +19,10 @@ public class FrogControl : AnimalBehaviour
             GameManager.Instance.SpawnHammer(gameObject);
             Collider.enabled = false;
         }
+        else if (UIManager.Instance.isUseHook)
+        {
+            UIManager.Instance.ChoiceHook();
+        }
     }
     private void OnMouseUp()
     {
