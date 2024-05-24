@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator SpawnHardLevel()
     {
+        UIManager.Instance.fireworkEffect.SetActive(true);
+        SoundManager.instance.PlayFireworkSound();
+        yield return new WaitForSeconds(1.5f);
         UIManager.Instance.changeSceneAnimator.gameObject.SetActive(true);
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         yield return new WaitForSeconds(0.75f);
@@ -78,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         UIManager.Instance.hardLevelWarning.SetActive(true);
-        Invoke(nameof(PlayHardLevelSound), 1f);
+        Invoke(nameof(PlayHardLevelSound), 0.5f);
     }
     void PlayHardLevelSound()
     {

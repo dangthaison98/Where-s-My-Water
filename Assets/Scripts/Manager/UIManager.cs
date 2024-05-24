@@ -135,6 +135,7 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator PlayCompleteLevel()
     {
+        fireworkEffect.SetActive(false);
         fireworkEffect.SetActive(true);
         SoundManager.instance.PlayFireworkSound();
         yield return new WaitForSeconds(1.5f);
