@@ -269,7 +269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap to move
+  m_text: TAP TO MOVE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47a888d20ce93964dbec69e1116e80a7, type: 2}
   m_sharedMaterial: {fileID: 2733246620181073343, guid: 47a888d20ce93964dbec69e1116e80a7, type: 2}
