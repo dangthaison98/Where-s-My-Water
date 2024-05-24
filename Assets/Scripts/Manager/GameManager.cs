@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,8 @@ public class GameManager : MonoBehaviour
     public void SpawnHammer(GameObject animal)
     {
         UIManager.Instance.UseHammer();
-        var hammerControl =  PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
+        var hammerControl = PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
+        hammerControl.GetComponent<SkeletonAnimation>().Start();
         StartCoroutine(DestroyAnimal(animal, 1.5f, hammerControl));
     }
     public void SpawnHook(GameObject animal)
