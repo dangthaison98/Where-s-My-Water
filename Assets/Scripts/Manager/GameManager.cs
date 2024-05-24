@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         UIManager.Instance.hardLevelWarning.SetActive(true);
+        SoundManager.instance.PlayWarningSound();
     }
     #endregion
 }
