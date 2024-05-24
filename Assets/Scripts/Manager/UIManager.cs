@@ -39,6 +39,34 @@ public class UIManager : MonoBehaviour
         gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
     }
 
+    #region Item
+    [HideInInspector] public bool isUseHook;
+    [HideInInspector] public bool isUseHammer;
+    public void UseHook()
+    {
+        if (isUseHook)
+        {
+            isUseHook = false;
+        }
+        else
+        {
+            isUseHook = true;
+        }
+    }
+    public void UseHammer()
+    {
+        if (isUseHammer)
+        {
+            isUseHammer = false;
+        }
+        else
+        {
+            isUseHammer = true;
+        }
+    }
+    #endregion
+
+    #region Complete Level
     public void CompleteLevel()
     {
         StartCoroutine(PlayCompleteLevel());
@@ -52,6 +80,7 @@ public class UIManager : MonoBehaviour
         completePanel.SetActive(true);
         DataManager.EarnCoin(baseCoin);
     }
+    #endregion
 
     #region Button
     public void NextLevelButton()

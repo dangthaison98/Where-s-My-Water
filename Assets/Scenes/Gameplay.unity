@@ -786,6 +786,8 @@ MonoBehaviour:
   nextLevelButton: {fileID: 6737537546620848993}
   arrowReward: {fileID: 6737537547283965005}
   changeSceneAnimator: {fileID: 4742333974818828542}
+  isUseHook: 0
+  isUseHammer: 0
 --- !u!1 &199865572
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +874,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1102219474}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 190711797}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UseHook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4843,6 +4857,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1102219474}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 190711797}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UseHammer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
