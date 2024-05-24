@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
+        PoolManager.ClearPool();
         SpawnEasyLevel();
     }
 
