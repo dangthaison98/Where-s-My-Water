@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : Singleton<PoolManager>
+public static class PoolManager
 {
     public static Dictionary<string, Queue<GameObject>> pool = new Dictionary<string, Queue<GameObject>>();
 
-    private void Awake()
+    public static void ClearPool()
     {
         pool.Clear();
     }
