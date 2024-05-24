@@ -64,9 +64,12 @@ public class AlligatorControl : AnimalBehaviour
             capsuleCollider.enabled = false;
             headAnim.AnimationName = "run5";
             headAnim.timeScale = 2;
+            headAnim.GetComponent<MeshRenderer>().sortingOrder = 4;
             bodyRenderer.sprite = normalBody;
+            bodyRenderer.GetComponent<SpriteRenderer>().sortingOrder = 4;
             tailAnim.AnimationName = "run5";
             tailAnim.timeScale = 2;
+            tailAnim.GetComponent<MeshRenderer>().sortingOrder = 4;
             return;
         }
         else if (UIManager.Instance.isUseHammer)

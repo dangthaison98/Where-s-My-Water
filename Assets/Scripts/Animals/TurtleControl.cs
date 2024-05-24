@@ -24,6 +24,7 @@ public class TurtleControl : AnimalBehaviour
         if (UIManager.Instance.isUseHook)
         {
             GameManager.Instance.SpawnHook(gameObject);
+            GetComponent<MeshRenderer>().sortingOrder = 4;
             Collider.enabled = false;
             return;
         }
