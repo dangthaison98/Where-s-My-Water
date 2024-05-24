@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     #region Item
     [HideInInspector] public bool isUseHook;
     [HideInInspector] public bool isUseHammer;
+    private int animalCountHook;
     public void ChoiceHook()
     {
         if (isUseHook)
@@ -72,6 +73,19 @@ public class UIManager : MonoBehaviour
             itemTuto.transform.parent.gameObject.SetActive(true);
         }
     }
+    public void UseHook()
+    {
+        isUseHook = false;
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].SetActive(true);
+        }
+        mainUi.SetActive(true);
+        itemTuto.transform.parent.gameObject.SetActive(false);
+
+        animalCountHook--;
+    }
+
     public void ChoiceHammer()
     {
         if (isUseHammer)

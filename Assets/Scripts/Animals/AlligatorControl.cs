@@ -58,6 +58,18 @@ public class AlligatorControl : AnimalBehaviour
     private Vector3 startPosOfCheckPoint;
     private void OnMouseDown()
     {
+        if (UIManager.Instance.isUseHook)
+        {
+            GameManager.Instance.SpawnHook(gameObject);
+            capsuleCollider.enabled = false;
+            headAnim.AnimationName = "run5";
+            headAnim.timeScale = 2;
+            bodyRenderer.sprite = normalBody;
+            tailAnim.AnimationName = "run5";
+            tailAnim.timeScale = 2;
+            return;
+        }
+
         gameObject.layer = 0;
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
 
@@ -73,7 +85,9 @@ public class AlligatorControl : AnimalBehaviour
         tailAnim.AnimationName = "run3";
     }
     private void OnMouseDrag()
-    { 
+    {
+        if (!capsuleCollider.enabled) return;
+
         if(countTimeTouch < 0.5f)
         {
             countTimeTouch += Time.deltaTime;
@@ -88,6 +102,8 @@ public class AlligatorControl : AnimalBehaviour
     }
     private void OnMouseUp()
     {
+        if (!capsuleCollider.enabled) return;
+
         if (LevelControl.Instance.groundGrid.GetTile(LevelControl.Instance.groundGrid.WorldToCell(checkPoint.position)))
         {
             CaculatePosition(LevelControl.Instance.choiceGrid.CellToWorld(LevelControl.Instance.choiceGrid.WorldToCell(checkPoint.position)), false);

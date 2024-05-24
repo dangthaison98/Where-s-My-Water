@@ -21,6 +21,13 @@ public class TurtleControl : AnimalBehaviour
 
     private void OnMouseDown()
     {
+        if (UIManager.Instance.isUseHook)
+        {
+            GameManager.Instance.SpawnHook(gameObject);
+            Collider.enabled = false;
+            return;
+        }
+
         gameObject.layer = 0;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 10, LayerMask.GetMask("Animal"));
         if (!hit)
@@ -45,6 +52,7 @@ public class TurtleControl : AnimalBehaviour
     }
     private void OnMouseUp()
     {
+        if (!Collider.enabled) return;
         gameObject.layer = 3;
     }
 

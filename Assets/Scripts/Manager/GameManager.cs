@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int maxLevel;
 
-    public GameObject hook;
+    public HookControl hook;
     public GameObject hammer;
 
     private void Awake()
@@ -26,9 +26,14 @@ public class GameManager : MonoBehaviour
         PoolManager.Spawn("Hammer", hammer, animal.transform.position, Quaternion.identity);
         StartCoroutine(DestroyAnimal(animal, 1.5f));
     }
-    public void SpawnHook(Vector2 pos)
+    public void SpawnHook(GameObject animal)
     {
-
+        UIManager.Instance.UseHook();
+        Vector3 startPos = new Vector3(animal.transform.position.x, Camera.main.orthographicSize + 0.5f + Camera.main.transform.position.y, 0);
+        HookControl hookControl = PoolManager.Spawn<HookControl>("Hook", hook, startPos, Quaternion.identity);
+        hookControl.target = animal;
+        hookControl.startPos = startPos;
+        hookControl.ActiveCatchAnimal();
     }
     IEnumerator DestroyAnimal(GameObject animal, float time)
     {
