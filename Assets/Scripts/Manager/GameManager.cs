@@ -68,6 +68,8 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.changeSceneAnimator.gameObject.SetActive(true);
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
         yield return new WaitForSeconds(0.75f);
+        UIManager.Instance.levelIcon[0].SetActive(false);
+        UIManager.Instance.levelIcon[1].SetActive(true);
         Destroy(easyLevel);
         int currentlevel = DataManager.GetLevel() % maxLevel + 1;
         Addressables.InstantiateAsync("Level " + currentlevel + ".2").Completed += InitHardLevel;
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
     private void InitHardLevel(AsyncOperationHandle<GameObject> handle)
     {
         UIManager.Instance.changeSceneAnimator.SetTrigger("Change");
+        UIManager.Instance.hardLevelWarning.SetActive(true);
     }
     #endregion
 }

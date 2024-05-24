@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI levelText;
     public GameObject mainUi;
     public TextMeshProUGUI itemTuto;
+    public GameObject[] levelIcon;
+    public GameObject hardLevelWarning;
 
     [Title("Item")]
     public GameObject[] itemButtons;

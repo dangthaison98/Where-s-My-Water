@@ -910,6 +910,10 @@ MonoBehaviour:
   levelText: {fileID: 1107732506}
   mainUi: {fileID: 638311360}
   itemTuto: {fileID: 1646701937}
+  levelIcon:
+  - {fileID: 20692056}
+  - {fileID: 1008658616}
+  hardLevelWarning: {fileID: 108195975}
   itemButtons:
   - {fileID: 199865572}
   - {fileID: 1495372449}
