@@ -93,7 +93,7 @@ MonoBehaviour:
   groundGrid: {fileID: 3255814810993786017}
   choiceGrid: {fileID: 8540146354884195526}
   choiceTile: {fileID: 11400000, guid: 06600accdbdbd174da96355f2b68af7a, type: 2}
-  cameraYPos: -1
+  cameraYPos: -0.85
   cameraSize: 7.5
   animalCount: 0
   animalChoice: {fileID: 0}
