@@ -26,5 +26,6 @@ public class HookControl : MonoBehaviour
         }
         Destroy(target);
         LevelControl.Instance.CheckCompleteLevel();
+        PoolManager.Despawn("Hook",gameObject);
     }
 }
