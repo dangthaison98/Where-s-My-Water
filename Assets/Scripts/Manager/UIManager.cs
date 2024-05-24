@@ -177,18 +177,19 @@ public class UIManager : MonoBehaviour
             arrowReward.GetComponent<Animation>().Stop();
             if (arrowReward.anchoredPosition.x < 70 && arrowReward.anchoredPosition.x > -70)
             {
-                baseCoin *= 3;
+                baseCoin *= 5;
                 DataManager.EarnCoin(baseCoin);
                 gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
             }
             else if (arrowReward.anchoredPosition.x < 210 && arrowReward.anchoredPosition.x > -210)
             {
-                baseCoin *= 2;
+                baseCoin *= 3;
                 DataManager.EarnCoin(baseCoin);
                 gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
             }
             else
             {
+                baseCoin *= 2;
                 DataManager.EarnCoin(baseCoin);
                 gainCoinText.text = "Level reward: " + baseCoin.ToString() + "  <sprite=0>";
             }
